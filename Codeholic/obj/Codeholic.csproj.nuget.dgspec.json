@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj": {}
+    "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj": {
+    "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj",
+        "projectUniqueName": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
         "projectName": "Codeholic",
-        "projectPath": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj",
-        "packagesPath": "C:\\Users\\Rallei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\obj\\",
+        "projectPath": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+        "packagesPath": "C:\\Users\\xfouc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rallei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\xfouc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
