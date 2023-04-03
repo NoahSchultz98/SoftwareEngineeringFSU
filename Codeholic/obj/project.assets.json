@@ -1860,11 +1860,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj",
+      "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
       "projectName": "Codeholic",
-      "projectPath": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\Codeholic.csproj",
+      "projectPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
       "packagesPath": "C:\\Users\\Rallei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rallei\\source\\repos\\Codeholic\\Codeholic\\obj\\",
+      "outputPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
