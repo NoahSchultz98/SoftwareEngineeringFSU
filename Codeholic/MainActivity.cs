@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -33,6 +34,7 @@ namespace Codeholic
         {
             switch (item.ItemId)
             {
+                // when we click the home, dash, notifications button, it just changes the text message. okay. simple enough. we can make mine open up the plugin manager.
                 case Resource.Id.navigation_home:
                     textMessage.SetText(Resource.String.title_home);
                     return true;
@@ -40,7 +42,10 @@ namespace Codeholic
                     textMessage.SetText(Resource.String.title_dashboard);
                     return true;
                 case Resource.Id.navigation_notifications:
-                    textMessage.SetText(Resource.String.title_notifications);
+                    textMessage.Text = "Plugin Manager"; // just a hack for now
+                    // code to begin new activity
+                    Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
+                    StartActivity(nextActivity);
                     return true;
             }
             return false;
