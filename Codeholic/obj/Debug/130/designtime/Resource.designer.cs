@@ -4410,10 +4410,10 @@ namespace Codeholic
 			public const int notification_template_part_time = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int PluginManagementSystem = 2131427382;
+			public const int pluginmanagementsystem = 2131427382;
 			
 			// aapt resource value: 0x7F0B0037
-			public const int PluginUploader = 2131427383;
+			public const int pluginuploader = 2131427383;
 			
 			// aapt resource value: 0x7F0B0038
 			public const int select_dialog_item_material = 2131427384;
