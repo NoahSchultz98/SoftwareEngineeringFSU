@@ -26,4 +26,15 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation" />
 
+    <Button
+        android:layout_width="100dp "
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/logout_button" />
+
+    <Button
+        android:layout_width=" 100dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/save_button" />
 </RelativeLayout>

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Codeholic</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Greetings User!</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="logout_button">Logout</string>
+    <string name="save_button">Save Project</string>
 </resources>
