@@ -1,3 +1,6 @@
+Codeholic.NoahActivity, Codeholic;crc647393a3d6bb91a4eb.NoahActivity
+Codeholic.NoahActivity;crc647393a3d6bb91a4eb.NoahActivity
+codeholic.NoahActivity;crc647393a3d6bb91a4eb.NoahActivity
 Codeholic.MainActivity, Codeholic;crc647393a3d6bb91a4eb.MainActivity
 Codeholic.MainActivity;crc647393a3d6bb91a4eb.MainActivity
 codeholic.MainActivity;crc647393a3d6bb91a4eb.MainActivity

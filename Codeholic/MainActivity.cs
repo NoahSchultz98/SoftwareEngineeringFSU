@@ -9,7 +9,7 @@ using Google.Android.Material.BottomNavigation;
 namespace Codeholic
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener
+    public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener//, GestureDetector.IOnGestureListener
     {
         TextView textMessage;
 
@@ -35,6 +35,8 @@ namespace Codeholic
             {
                 case Resource.Id.navigation_home:
                     textMessage.SetText(Resource.String.title_home);
+                    //Intent intent = new Intent(this, typeof(NoahActivity));
+                    //StartActivity(NoahActivity);
                     return true;
                 case Resource.Id.navigation_dashboard:
                     textMessage.SetText(Resource.String.title_dashboard);
@@ -44,6 +46,14 @@ namespace Codeholic
                     return true;
             }
             return false;
+        }
+
+        public bool OnLoginPress()
+        {
+
+            SetContentView(Resource.Layout.layout1);
+
+            return true;
         }
     }
 }
