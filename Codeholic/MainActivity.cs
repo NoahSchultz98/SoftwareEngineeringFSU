@@ -1,10 +1,14 @@
 ﻿using Android.App;
+using Android.Content;
+using Android.Content.Res;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Google.Android.Material.BottomNavigation;
+using System;
+using Microsoft.Data.SqlClient;
 
 namespace Codeholic
 {
@@ -22,6 +26,10 @@ namespace Codeholic
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
+
+            Button LoginButton = FindViewById<Button>(Resource.Id.ButtonLogin);
+
+            LoginButton.Click += OnLoginPress;
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -35,8 +43,8 @@ namespace Codeholic
             {
                 case Resource.Id.navigation_home:
                     textMessage.SetText(Resource.String.title_home);
-                    //Intent intent = new Intent(this, typeof(NoahActivity));
-                    //StartActivity(NoahActivity);
+                    Intent Noahintent = new Intent(this, typeof(NoahActivity));
+                    StartActivity(Noahintent);
                     return true;
                 case Resource.Id.navigation_dashboard:
                     textMessage.SetText(Resource.String.title_dashboard);
@@ -48,12 +56,24 @@ namespace Codeholic
             return false;
         }
 
-        public bool OnLoginPress()
+        public void OnLoginPress(object sender, EventArgs e)
         {
+            //string connectionString;
+            //SqlConnection con;
 
-            SetContentView(Resource.Layout.layout1);
+            //connectionString = @"Data Source=WIN-50GP30FGO75;Initial Catalog=Demodb;User ID=sa;Password=demol23";
 
-            return true;
+            //con = new SqlConnection(connectionString);
+            //SetContentView(Resource.Layout.layout1);
+            // CHECK THE DATA BASE PLEASE 
+            // LOGIN IF THAT SHIT IS YUMMY
+
+            //con.Open();
+            //MessageBox.Show("Connection Open  !");
+
+            Toast.MakeText(this, "You loggin in", ToastLength.Short).Show(); // send an alert when you login
+
+            //con.Close();
         }
     }
 }

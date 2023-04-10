@@ -17,7 +17,6 @@ foreground;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
 foreground;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher_round.xml
 item;obj\Debug\130\res\menu\navigation.xml
 item;obj\Debug\130\res\values\styles.xml
-LinearLayout;obj\Debug\130\res\layout\layout1.xml
 menu;obj\Debug\130\res\menu\navigation.xml
 path;obj\Debug\130\res\drawable\ic_dashboard_black_24dp.xml
 path;obj\Debug\130\res\drawable\ic_home_black_24dp.xml
