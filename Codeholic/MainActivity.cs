@@ -1,10 +1,12 @@
 ﻿using Android.App;
+using Android.Media.Metrics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Google.Android.Material.BottomNavigation;
+using System;
 
 namespace Codeholic
 {
@@ -22,6 +24,13 @@ namespace Codeholic
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
+
+            Button ButtonSave = FindViewById<Button>(Resource.Id.ButtonSave);
+            Button ButtonLogout = FindViewById<Button>(Resource.Id.ButtonLogout);
+
+            ButtonSave.Click += OnSavePress;
+            ButtonLogout.Click += OnLogoutPress;
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -45,6 +54,19 @@ namespace Codeholic
             }
             return false;
         }
+
+        public void OnSavePress(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Save Clicked", ToastLength.Short).Show();
+
+        }
+
+        public void OnLogoutPress(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Logout Clicked", ToastLength.Short).Show();
+
+        }
+
     }
 }
 
