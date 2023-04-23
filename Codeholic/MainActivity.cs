@@ -16,6 +16,7 @@ namespace Codeholic
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener//, GestureDetector.IOnGestureListener
     {
         TextView textMessage;
+        //internal bool isScrolling;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,6 +31,11 @@ namespace Codeholic
             Button LoginButton = FindViewById<Button>(Resource.Id.ButtonLogin);
 
             LoginButton.Click += OnLoginPress;
+
+            Button LoginSkipButton = FindViewById<Button>(Resource.Id.ButtonSkipLogin);
+
+            LoginSkipButton.Click += OnSkipLoginPress;
+
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
@@ -58,23 +64,22 @@ namespace Codeholic
 
         public void OnLoginPress(object sender, EventArgs e)
         {
-            //string connectionString;
-            //SqlConnection con;
+            Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
 
-            //connectionString = @"Data Source=WIN-50GP30FGO75;Initial Catalog=Demodb;User ID=sa;Password=demol23";
-
-            //con = new SqlConnection(connectionString);
-            //SetContentView(Resource.Layout.layout1);
-            // CHECK THE DATA BASE PLEASE 
-            // LOGIN IF THAT SHIT IS YUMMY
-
-            //con.Open();
-            //MessageBox.Show("Connection Open  !");
-
-            Toast.MakeText(this, "You loggin in", ToastLength.Short).Show(); // send an alert when you login
-
-            //con.Close();
+            Intent Noahintent = new Intent(this, typeof(NoahActivity));
+            StartActivity(Noahintent);
         }
+
+        public void OnSkipLoginPress(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "You chose not to login", ToastLength.Short).Show();
+
+            Intent Noahintent = new Intent(this, typeof(NoahActivity));
+            StartActivity(Noahintent);
+        }
+
+        //internal virtual void UpdateLineNumbers();
+
     }
 }
 
