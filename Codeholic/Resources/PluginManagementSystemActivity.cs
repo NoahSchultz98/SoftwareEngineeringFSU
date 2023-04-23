@@ -44,5 +44,8 @@ namespace Codeholic.Resources
             navigation.SetOnNavigationItemSelectedListener(this);
             */
         }
+
+
+
     }
 }

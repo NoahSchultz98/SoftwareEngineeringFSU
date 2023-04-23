@@ -6,6 +6,11 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using Google.Android.Material.BottomNavigation;
+using System;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+using static Codeholic.Resources.Extensions;
+using static Android.Bluetooth.BluetoothClass;
 
 namespace Codeholic
 {
@@ -23,7 +28,22 @@ namespace Codeholic
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
+
+            Button pickFile = FindViewById<Button>(Resource.Id.btnPickFile);
+            pickFile.Click += PickFile_Click;
+
+            // for test:
+            getID();
         }
+
+        private void PickFile_Click(object sender, EventArgs e)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await PickAndShow(PickOptions.Images);
+            });
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -49,6 +69,65 @@ namespace Codeholic
                     return true;
             }
             return false;
+        }
+
+        /*
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            FilePicker.PickAsync();
+
+        }
+        */
+        /*
+        public void OnClick(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.btnPickFile:
+                    MainThread.BeginInvokeOnMainThread(async () =>
+                    {
+                        await PickAndShow(PickOptions.Images);
+                    });
+                    break;
+            }
+        }
+
+        public void ButtonClicked(View view)
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                await PickAndShow(PickOptions.Images);
+            });
+        }
+
+        
+    }
+        */
+        async Task<FileResult> PickAndShow(PickOptions options)
+        {
+            try
+            {
+                var result = await FilePicker.PickAsync(options);
+                if (result != null)
+                {
+                    textMessage.Text = $"File Name: {result.FileName}";
+                    if (result.FileName.EndsWith("jpg", StringComparison.OrdinalIgnoreCase) ||
+                        result.FileName.EndsWith("png", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var stream = await result.OpenReadAsync();
+                        //FileImage.Source = ImageSource.FromStream(() => stream);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                // The user canceled or something went wrong
+                _ = ex;
+            }
+
+            return null;
         }
     }
 }

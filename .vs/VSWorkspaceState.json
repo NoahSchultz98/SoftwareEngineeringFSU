@@ -2,10 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Codeholic",
-    "\\Codeholic\\bin",
-    "\\Codeholic\\obj",
     "\\Codeholic\\Resources",
-    "\\Codeholic\\Resources\\layout"
+    "\\Codeholic\\Resources\\layout",
+    "\\Codeholic\\SQL"
   ],
+  "SelectedNode": "\\Codeholic.sln",
   "PreviewInSolutionExplorer": false
 }
