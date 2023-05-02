@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
 
 namespace Codeholic.SQL
 {
@@ -24,19 +25,24 @@ namespace Codeholic.SQL
         public string helpdocData { get; set; }
         public int creator { get; set; }
         public string description { get; set; }
-        public bool available { get; set; }
+        public int available { get; set; }
 
         public Plugin()
         {
             name = "default plugin name";
             description = "default plugin description";
+            pluginData = "data string";
+            helpdocData = "helpdoc data string";
+            
         }
-        public Plugin(string _data)
+        public Plugin(string _data, string _name = "default plugin name", string _description = "default plugin description")
         {
             // constructor stuff
             pluginData = _data;
-            name = "default plugin name";
-            description = "default plugin description";
+            name = _name;
+            description = _description;
+            helpdocData = "help doc data";
+
         }
     }
 }

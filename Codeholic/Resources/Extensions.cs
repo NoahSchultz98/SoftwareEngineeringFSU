@@ -13,11 +13,21 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using System.Data;
 using Codeholic.SQL;
+using System.Data.SqlClient;
+using System.Net;
+using System.Net.Http;
+using RestSharp;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Net.Http.Json;
 
 namespace Codeholic.Resources
 {
     internal class Extensions
     {
+
+        
+        private static RestClient _client = new RestClient("https://www.pokodraws.com/");
 
 
         private static string dbServer = "";
@@ -35,6 +45,132 @@ namespace Codeholic.Resources
             }
 
         }
+
+        public static void TestRest()
+        {
+            string toToast = "";
+            var request = new RestRequest("CodeholicLibrary.php", Method.Get);
+            var response = _client.Execute(request);
+
+            toToast = response.StatusDescription.ToString();
+            
+            Toast.MakeText(Android.App.Application.Context, toToast, ToastLength.Long).Show();
+        }
+
+        public static void Post()
+        {
+            string URI = "http://www.pokodraws.com/CodeaholicLibrary.php";
+            string myParameters;
+
+            using (WebClient webClient = new WebClient())
+            {
+                //webClient.Headers[HttpRequestHeader.ContentType] = "application/json";
+                //string result = webClient.UploadString(URI, myParameters);
+                
+            }
+
+        }
+
+        private static string URI = "http://192.168.1.4/Codeaholic/access.php";
+        public async static Task<User> GetUserInfo()
+        {
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                string result = await httpClient.GetStringAsync(URI);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "getUserInfo",
+                    userID = 1
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                // data isn't null, so...
+                User user = JsonSerializer.Deserialize<User>(data.data);
+
+                return user;
+            }
+        }
+
+            public async static void Get()
+            {
+            // reference: https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient
+            //string URI = "https://jsonplaceholder.typicode.com/todos";
+            //string URI = "https://www.pokodraws.com/CodeholicLibrary.php";
+            string URI = "http://192.168.1.4/Codeaholic/access.php";
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                string result = await httpClient.GetStringAsync(URI);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "getUserInfo",
+                    userID = 1
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                //result = await response.Content.ReadAsStringAsync();
+
+                //WebResponse data = JsonConverter.Deserialize<WebResponse>(result);
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                // data isn't null, so...
+                User user = JsonSerializer.Deserialize<User>(data.data);
+
+
+                // availableData = "Status Code: " + data.status.ToString() + " Status_Message: " + data.status_message + " Data String: " + data.data;
+                // it's returning basically a new object(?)
+                Toast.MakeText(Android.App.Application.Context, "Result: " + user.userType.ToString(), ToastLength.Long).Show();
+            }
+        }
+
+        public static string ConnectionTest()
+        {
+            string connectionString = "Data Source= 192.168.1.4; Initial Catalog=codeaholic;User ID=kkDFh18s6edh767LOOhseder1;Password=XCz792ziUoqlPxqZalOQPAlqwwQUi";
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            try
+            {
+                sqlConnection.Open();
+                Toast.MakeText(Android.App.Application.Context, "The connection is open", ToastLength.Long).Show();
+                sqlConnection.Close();
+            }
+            catch (Exception e)
+            {
+                throw;
+                //Toast.MakeText(Android.App.Application.Context, "An error was encountered in attempting to open the connection: " + e.Message, ToastLength.Long).Show();
+
+                //return e.StackTrace;
+                //Toast.MakeText(Android.App.Application.Context, "An error was encountered in attempting to open the connection.", ToastLength.Long).Show();
+            }
+            return "Successfully connected to database";
+        }
+
         public static void getID()
         {
             using(var dbContext = new DatabaseContext())

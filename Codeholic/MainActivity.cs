@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using static Codeholic.Resources.Extensions;
 using static Android.Bluetooth.BluetoothClass;
+using System.Net;
+using Codeholic.Resources;
+using Codeholic.SQL;
+using System.Text.Json;
 
 namespace Codeholic
 {
@@ -19,8 +23,10 @@ namespace Codeholic
     {
         TextView textMessage;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override async void OnCreate(Bundle savedInstanceState)
         {
+            //ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
+
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -31,9 +37,26 @@ namespace Codeholic
 
             Button pickFile = FindViewById<Button>(Resource.Id.btnPickFile);
             pickFile.Click += PickFile_Click;
-
+#if DEBUG
+            // During development, we can trust all certificates, including ASP.NET developer certificates
+            // DO NOT ENABLE THIS IN RELEASE BUILDS
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = (_, __, ___, ____) => true;
+#endif
+            TestConn();
             // for test:
-            getID();
+            //getID();
+        }
+
+        private async void TestConn()
+        {
+            Codeholic.Resources.WebResponse response = await DatabaseConnection.Query("SELECT * FROM user WHERE userID = 1");
+
+
+
+            SQL.User theUserFound = JsonSerializer.Deserialize<User>(response.data);
+            Toast.MakeText(Android.App.Application.Context, "Greetings from " + theUserFound.username, ToastLength.Long).Show();
+            //Toast.MakeText(Android.App.Application.Context, response.data, ToastLength.Long).Show();
+            //DatabaseConnection.GetUserInfo();
         }
 
         private void PickFile_Click(object sender, EventArgs e)

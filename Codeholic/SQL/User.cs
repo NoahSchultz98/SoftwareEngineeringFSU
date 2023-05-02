@@ -17,11 +17,22 @@ namespace Codeholic.SQL
     {
         [Key]
         public int userID { get; set; }
-        public int userType { get; set; }
+        public UserType userType { get; set; }
         public string username { get; set; }
         public string password { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }
+
+        public override string ToString()
+        {
+
+            return "User ID: " + userID + " User Type: " + userType + " Username: " + username;
+        }
+    }
+
+    public enum UserType
+    {
+        guest=0,registeredUser=1,pluginDeveloper=2
     }
 }

@@ -9,13 +9,13 @@
         android:inputType="textNoSuggestions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2" />
+        android:id="@+id/pluginName" />
     <EditText
-        android:text="Decsription of the plugin goes here"
+        android:text="Description of the plugin goes here"
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText1" />
+        android:id="@+id/pluginDescription" />
     <TextView
         android:text="Name of selected file will appear here"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -32,5 +32,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnUploadPlugin" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/textViewErrorLogging" />
 
 </LinearLayout>
