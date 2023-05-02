@@ -30,6 +30,7 @@ path;obj\Debug\130\res\drawable\ic_notifications_black_24dp.xml
 paths;C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\lp\39\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 RelativeLayout;obj\Debug\130\res\layout\activity_main.xml
 RelativeLayout;obj\Debug\130\res\layout\layout1.xml
+RelativeLayout;obj\Debug\130\res\layout\line_number_edit_text.xml
 RelativeLayout;obj\Debug\130\res\layout\nav_bar.xml
 resources;obj\Debug\130\res\values\colors.xml
 resources;obj\Debug\130\res\values\dimens.xml

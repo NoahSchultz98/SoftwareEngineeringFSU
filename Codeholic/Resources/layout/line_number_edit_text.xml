@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -13,6 +13,7 @@
             android:id="@+id/lineNumbers"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_toLeftOf=""
             android:gravity="center_vertical"
             android:padding="10dp"
             android:textColor="#808080"
@@ -21,14 +22,16 @@
         <EditText
             android:id="@+id/editTextWindow"
             android:inputType="textMultiLine"
+            android:layout_marginLeft="40dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
             android:padding="10dp"
             android:textColor="#000000"
-            android:textSize="14sp" />
+            android:textSize="14sp" 
+            android:hint="@string/start_coding"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </ScrollView>
 

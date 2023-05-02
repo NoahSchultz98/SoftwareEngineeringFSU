@@ -4638,22 +4638,25 @@ namespace Codeholic
 			public const int search_menu_title = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int status_bar_notification_info_overflow = 2131623986;
+			public const int start_coding = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int title_dashboard = 2131623987;
+			public const int status_bar_notification_info_overflow = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int title_home = 2131623988;
+			public const int title_dashboard = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int title_notifications = 2131623989;
+			public const int title_home = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int title_pass = 2131623990;
+			public const int title_notifications = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int title_user = 2131623991;
+			public const int title_pass = 2131623991;
+			
+			// aapt resource value: 0x7F0E0038
+			public const int title_user = 2131623992;
 			
 			static String()
 			{

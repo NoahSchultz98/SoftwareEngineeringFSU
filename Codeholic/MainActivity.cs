@@ -78,8 +78,6 @@ namespace Codeholic
             StartActivity(Noahintent);
         }
 
-        //internal virtual void UpdateLineNumbers();
-
     }
 }
 

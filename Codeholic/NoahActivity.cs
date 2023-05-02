@@ -40,17 +40,14 @@ namespace Codeholic
 
             editTextWindow = FindViewById<EditText>(Resource.Id.editTextWindow);
             lineNumbers = FindViewById<TextView>(Resource.Id.lineNumbers);
-            //scrollView = FindViewById<ScrollView>(Resource.Id.scrollView);
 
             editTextWindow.AddTextChangedListener(new MyTextWatcher(this));//
-
-            //scrollView.SetOnTouchListener(new MyTouchListener());
-            //scrollView.ViewTreeObserver.AddOnScrollChangedListener(new MyOnScrollChangedListener(this));
-
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
+
+            UpdateLineNumbers(1);
 
         }
 
@@ -73,11 +70,11 @@ namespace Codeholic
             return false;
         }
 
-        public void UpdateLineNumbers()
+        public void UpdateLineNumbers(int linesLength)
         {
-            string[] lines = lineNumbers.Text.Split('\n');
+            //string[] lines = lineNumbers.Text.Split('\n');
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
-            for (int i = 1; i <= lines.Length; i++)
+            for (int i = 1; i <= linesLength/*lines.Length*/; i++)
             {
                 sb.Append(i).Append("\n");
             }
@@ -107,7 +104,6 @@ namespace Codeholic
         {
             private NoahActivity activity;
 
-            //private int lineCount;
             private bool lineCheck;
             private int newLineCount = 0;
         
@@ -120,7 +116,7 @@ namespace Codeholic
             {
                 if (lineCheck)
                 {
-                    activity.UpdateLineNumbers();
+                    activity.UpdateLineNumbers(newLineCount);
                 }
 
                 return;
@@ -150,13 +146,14 @@ namespace Codeholic
                     if (s.CharAt(i) == '\n')
                     {
                         tempNLCount += 1;
-                        
-                    }
-                    if (tempNLCount > newLineCount) {
-                        lineCheck = true;
-                        break;
-                    }
 
+                    }
+                }
+
+                if (tempNLCount != newLineCount)
+                {
+                    lineCheck = true;
+                    newLineCount = tempNLCount;
                 }
 
                 return;
