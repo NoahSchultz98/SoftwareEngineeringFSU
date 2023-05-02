@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 c797014633d501227a1666a191ce00e6862f6565
+=======
+95e73811011781a72f44ecf87c48ee8109940b20
+>>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
