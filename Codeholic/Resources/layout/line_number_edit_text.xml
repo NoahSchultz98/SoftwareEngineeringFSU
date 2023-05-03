@@ -13,7 +13,6 @@
             android:id="@+id/lineNumbers"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_toLeftOf=""
             android:gravity="center_vertical"
             android:padding="10dp"
             android:textColor="#808080"
