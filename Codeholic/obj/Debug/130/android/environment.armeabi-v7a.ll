@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; ModuleID = 'obj\Debug\130\android\environment.armeabi-v7a.ll'
 source_filename = "obj\Debug\130\android\environment.armeabi-v7a.ll"
 target datalayout = "e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64"
@@ -1397,6 +1398,8 @@ target triple = "armv7-unknown-linux-android"
 !2 = !{i32 1, !"min_enum_size", i32 4}
 !3 = !{!"Xamarin.Android remotes/origin/d17-5 @ 797e2e13d1706ace607da43703769c5a55c4de60"}
 =======
+=======
+>>>>>>> Sammy
 ; ModuleID = 'obj\Debug\130\android\environment.armeabi-v7a.ll'
 source_filename = "obj\Debug\130\android\environment.armeabi-v7a.ll"
 target datalayout = "e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64"
@@ -3132,4 +3135,7 @@ target triple = "armv7-unknown-linux-android"
 !1 = !{i32 7, !"PIC Level", i32 2}
 !2 = !{i32 1, !"min_enum_size", i32 4}
 !3 = !{!"Xamarin.Android remotes/origin/d17-4 @ 13ba222766e8e41d419327749426023194660864"}
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Sammy
 package crc64ed1888fb4925e3b7;
 
 
@@ -82,6 +85,7 @@ public class AuthenticationAgentActivity_CoreWebViewClient
 			refList.clear ();
 	}
 }
+<<<<<<< HEAD
 =======
 package crc64ed1888fb4925e3b7;
 
@@ -167,3 +171,5 @@ public class AuthenticationAgentActivity_CoreWebViewClient
 	}
 }
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

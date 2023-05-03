@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Sammy
 package microsoft.identity.client;
 
 
@@ -74,6 +77,7 @@ public class AuthenticationActivity
 			refList.clear ();
 	}
 }
+<<<<<<< HEAD
 =======
 package microsoft.identity.client;
 
@@ -151,3 +155,5 @@ public class AuthenticationActivity
 	}
 }
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\bin\Debug\Codeholic.dll
 C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\bin\Debug\Codeholic.pdb
 C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\bin\Debug\com.companyname.codeholic.apk
@@ -392,6 +393,8 @@ C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\obj\Debug\130
 C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\res\layout\nav_bar.xml
 C:\Users\xfouc\OneDrive\Documents\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\android\src\crc647393a3d6bb91a4eb\NoahActivity_MyTouchListener.java
 =======
+=======
+>>>>>>> Sammy
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\bin\Debug\Codeholic.dll
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\bin\Debug\Codeholic.pdb
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\bin\Debug\com.companyname.codeholic.apk
@@ -852,4 +855,7 @@ C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\andr
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\android\assets\Microsoft.Extensions.Configuration.dll
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\android\assets\RestSharp.dll
 C:\Users\Rallei\Source\Repos\SoftwareEngineeringFSU\Codeholic\obj\Debug\130\android\assets\System.Net.Http.Json.dll
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

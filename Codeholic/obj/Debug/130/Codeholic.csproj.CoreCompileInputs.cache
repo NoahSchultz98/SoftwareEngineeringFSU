@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 fbceaf7143df3226e6a52fb97df6e4e8780d99ee
 =======
 44d12edd22bf062d5aee82c4ed071cca51e021a9
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+44d12edd22bf062d5aee82c4ed071cca51e021a9
+>>>>>>> Sammy

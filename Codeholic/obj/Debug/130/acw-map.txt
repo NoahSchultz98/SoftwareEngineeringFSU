@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Codeholic.NoahActivity, Codeholic;crc647393a3d6bb91a4eb.NoahActivity
 Codeholic.NoahActivity;crc647393a3d6bb91a4eb.NoahActivity
 codeholic.NoahActivity;crc647393a3d6bb91a4eb.NoahActivity
@@ -1101,6 +1102,8 @@ Google.Common.Util.Concurrent.IListenableFuture, Xamarin.Google.Guava.Listenable
 Google.Common.Util.Concurrent.IListenableFuture;com.google.common.util.concurrent.ListenableFuture
 com.google.common.util.concurrent.ListenableFuture;com.google.common.util.concurrent.ListenableFuture
 =======
+=======
+>>>>>>> Sammy
 Codeholic.MainActivity, Codeholic;crc647393a3d6bb91a4eb.MainActivity
 Codeholic.MainActivity;crc647393a3d6bb91a4eb.MainActivity
 codeholic.MainActivity;crc647393a3d6bb91a4eb.MainActivity
@@ -3111,4 +3114,7 @@ kotlinx.coroutines.flow.StateFlow;kotlinx.coroutines.flow.StateFlow
 Xamarin.KotlinX.Coroutines.Channels.IChannelIterator, Xamarin.KotlinX.Coroutines.Core.Jvm;kotlinx.coroutines.channels.ChannelIterator
 Xamarin.KotlinX.Coroutines.Channels.IChannelIterator;kotlinx.coroutines.channels.ChannelIterator
 kotlinx.coroutines.channels.ChannelIterator;kotlinx.coroutines.channels.ChannelIterator
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

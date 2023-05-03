@@ -15,7 +15,11 @@ namespace Codeholic
 {
 	
 	
+<<<<<<< HEAD
 	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.2.0.93")]
+=======
+	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Android.Build.Tasks", "13.1.0.5")]
+>>>>>>> Sammy
 	public partial class Resource
 	{
 		
@@ -306,6 +310,7 @@ namespace Codeholic
 			public const int design_snackbar_out = 2130771995;
 			
 			// aapt resource value: 0x7F01001C
+<<<<<<< HEAD
 			public const int fragment_close_enter = 2130771996;
 			
 			// aapt resource value: 0x7F01001D
@@ -325,6 +330,9 @@ namespace Codeholic
 			
 			// aapt resource value: 0x7F010022
 			public const int fragment_open_exit = 2130772002;
+=======
+			public const int fragment_fast_out_extra_slow_in = 2130771996;
+>>>>>>> Sammy
 			
 			static Animation()
 			{
@@ -349,6 +357,7 @@ namespace Codeholic
 			public const int design_fab_show_motion_spec = 2130837506;
 			
 			// aapt resource value: 0x7F020003
+<<<<<<< HEAD
 			public const int mtrl_btn_state_list_anim = 2130837507;
 			
 			// aapt resource value: 0x7F020004
@@ -368,6 +377,45 @@ namespace Codeholic
 			
 			// aapt resource value: 0x7F020009
 			public const int mtrl_fab_transformation_sheet_expand_spec = 2130837513;
+=======
+			public const int fragment_close_enter = 2130837507;
+			
+			// aapt resource value: 0x7F020004
+			public const int fragment_close_exit = 2130837508;
+			
+			// aapt resource value: 0x7F020005
+			public const int fragment_fade_enter = 2130837509;
+			
+			// aapt resource value: 0x7F020006
+			public const int fragment_fade_exit = 2130837510;
+			
+			// aapt resource value: 0x7F020007
+			public const int fragment_open_enter = 2130837511;
+			
+			// aapt resource value: 0x7F020008
+			public const int fragment_open_exit = 2130837512;
+			
+			// aapt resource value: 0x7F020009
+			public const int mtrl_btn_state_list_anim = 2130837513;
+			
+			// aapt resource value: 0x7F02000A
+			public const int mtrl_btn_unelevated_state_list_anim = 2130837514;
+			
+			// aapt resource value: 0x7F02000B
+			public const int mtrl_chip_state_list_anim = 2130837515;
+			
+			// aapt resource value: 0x7F02000C
+			public const int mtrl_fab_hide_motion_spec = 2130837516;
+			
+			// aapt resource value: 0x7F02000D
+			public const int mtrl_fab_show_motion_spec = 2130837517;
+			
+			// aapt resource value: 0x7F02000E
+			public const int mtrl_fab_transformation_sheet_collapse_spec = 2130837518;
+			
+			// aapt resource value: 0x7F02000F
+			public const int mtrl_fab_transformation_sheet_expand_spec = 2130837519;
+>>>>>>> Sammy
 			
 			static Animator()
 			{
@@ -437,6 +485,7 @@ namespace Codeholic
 			public const int actionModeCloseButtonStyle = 2130903057;
 			
 			// aapt resource value: 0x7F030012
+<<<<<<< HEAD
 			public const int actionModeCloseDrawable = 2130903058;
 			
 			// aapt resource value: 0x7F030013
@@ -9700,6 +9749,8 @@ namespace Codeholic
 			public const int actionModeCloseButtonStyle = 2130903057;
 			
 			// aapt resource value: 0x7F030012
+=======
+>>>>>>> Sammy
 			public const int actionModeCloseContentDescription = 2130903058;
 			
 			// aapt resource value: 0x7F030013

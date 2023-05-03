@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "lGa4t7kl2O06MObl6XmGf3/zUV3VyCLkX5eXwGkqpfBVYPgU6y91SvCt2WgLs5FTlPsRzRSPR1ducxprDS/BrA==",
   "success": true,
   "projectFilePath": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
@@ -94,6 +95,12 @@
   "success": true,
   "projectFilePath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
   "expectedPackageFiles": [
+=======
+  "dgSpecHash": "VxTsRkCa4VRur5Ukaer9O1CiiooNtV+XSyiOGJ/A3SqKvJ3CLi9yWi9Pf/t9Fu2lNQGBmF9Dy7WUgxJhJ16uoQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+  "expectedPackageFiles": [
+>>>>>>> Sammy
     "C:\\Users\\Rallei\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Rallei\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Rallei\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 AdbTarget=-s R5CT807MCVB
 AdbOptions=
+=======
+AdbTarget=-s emulator-5554
+AdbOptions=
+>>>>>>> Sammy

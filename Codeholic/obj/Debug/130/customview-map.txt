@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 adaptive-icon;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher_round.xml
 background;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
@@ -47,6 +48,8 @@ vector;obj\Debug\130\res\drawable\ic_dashboard_black_24dp.xml
 vector;obj\Debug\130\res\drawable\ic_home_black_24dp.xml
 vector;obj\Debug\130\res\drawable\ic_notifications_black_24dp.xml
 =======
+=======
+>>>>>>> Sammy
 adaptive-icon;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
 adaptive-icon;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher_round.xml
 background;obj\Debug\130\res\mipmap-anydpi-v26\ic_launcher.xml
@@ -89,4 +92,7 @@ TextView;obj\Debug\130\res\layout\pluginuploader.xml
 vector;obj\Debug\130\res\drawable\ic_dashboard_black_24dp.xml
 vector;obj\Debug\130\res\drawable\ic_home_black_24dp.xml
 vector;obj\Debug\130\res\drawable\ic_notifications_black_24dp.xml
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

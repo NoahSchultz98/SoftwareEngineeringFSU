@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 bundleassemblies=false
 aotassemblies=false
 androidaddkeepalives=
@@ -35,6 +36,8 @@ x86_64
 androidmanifestplaceholders=
 projectfullpath=c:\users\xfouc\onedrive\documents\softwareengineeringfsu\codeholic\codeholic.csproj
 =======
+=======
+>>>>>>> Sammy
 bundleassemblies=false
 aotassemblies=false
 androidaddkeepalives=
@@ -69,4 +72,7 @@ armeabi-v7a
 x86
 x86_64
 androidmanifestplaceholders=
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package mono;
 public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
@@ -69,6 +70,8 @@ public class MonoPackageManager_Resources {
 	};
 }
 =======
+=======
+>>>>>>> Sammy
 package mono;
 public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
@@ -170,4 +173,7 @@ public class MonoPackageManager_Resources {
 	public static String[] Dependencies = new String[]{
 	};
 }
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

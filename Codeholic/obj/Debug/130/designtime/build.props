@@ -5,6 +5,7 @@ androidaddkeepalives=
 androidaotmode=none
 androidembedprofilers=
 androidenableprofiledaot=false
+<<<<<<< HEAD
 androiddextool=d8
 androidlinktool=
 androidlinkresources=
@@ -41,6 +42,8 @@ androidaddkeepalives=
 androidaotmode=none
 androidembedprofilers=
 androidenableprofiledaot=false
+=======
+>>>>>>> Sammy
 androiddextool=d8
 androidlinktool=
 androidlinkresources=

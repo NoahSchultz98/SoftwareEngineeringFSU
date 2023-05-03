@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; ModuleID = 'obj\Debug\130\android\environment.arm64-v8a.ll'
 source_filename = "obj\Debug\130\android\environment.arm64-v8a.ll"
 target datalayout = "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128"
@@ -1400,6 +1401,8 @@ target triple = "aarch64-unknown-linux-android"
 !5 = !{i32 1, !"sign-return-address-with-bkey", i32 0}
 !6 = !{!"Xamarin.Android remotes/origin/d17-5 @ 797e2e13d1706ace607da43703769c5a55c4de60"}
 =======
+=======
+>>>>>>> Sammy
 ; ModuleID = 'obj\Debug\130\android\environment.arm64-v8a.ll'
 source_filename = "obj\Debug\130\android\environment.arm64-v8a.ll"
 target datalayout = "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128"
@@ -3138,4 +3141,7 @@ target triple = "aarch64-unknown-linux-android"
 !4 = !{i32 1, !"sign-return-address-all", i32 0}
 !5 = !{i32 1, !"sign-return-address-with-bkey", i32 0}
 !6 = !{!"Xamarin.Android remotes/origin/d17-4 @ 13ba222766e8e41d419327749426023194660864"}
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

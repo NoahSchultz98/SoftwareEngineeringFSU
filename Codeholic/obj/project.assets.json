@@ -47,6 +47,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -54,6 +55,14 @@
         },
         "compile": {
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
+=======
+      "Microsoft.Bcl.AsyncInterfaces/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+>>>>>>> Sammy
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -110,6 +119,7 @@
             "assetType": "runtime",
             "rid": "win"
           }
+<<<<<<< HEAD
         }
       },
       "Microsoft.Data.SqlClient.SNI.runtime/5.1.0": {
@@ -153,15 +163,60 @@
         ],
         "compile": {
           "lib/monoandroid10.0/Microsoft.Identity.Client.dll": {
+=======
+        }
+      },
+      "Microsoft.Data.SqlClient.SNI.runtime/5.1.0": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
+            "assetType": "native",
+            "rid": "win-arm"
+          },
+          "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "3.0.0",
+          "Microsoft.EntityFrameworkCore.Analyzers": "3.0.0",
+          "Microsoft.Extensions.Caching.Memory": "3.0.0",
+          "Microsoft.Extensions.DependencyInjection": "3.0.0",
+          "Microsoft.Extensions.Logging": "3.0.0",
+          "System.Collections.Immutable": "1.6.0",
+          "System.ComponentModel.Annotations": "4.6.0",
+          "System.Diagnostics.DiagnosticSource": "4.6.0",
+          "System.Threading.Tasks.Extensions": "4.5.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/monoandroid10.0/Microsoft.Identity.Client.dll": {
+=======
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
         "type": "package",
         "dependencies": {
@@ -170,23 +225,524 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+=======
+      "Microsoft.EntityFrameworkCore.Abstractions/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
           "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+=======
+          "lib/netstandard2.1/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         }
       },
+<<<<<<< HEAD
       "Microsoft.IdentityModel.Abstractions/6.24.0": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.dll": {
+=======
+      "Microsoft.EntityFrameworkCore.Analyzers/3.0.0": {
+        "type": "package"
+      },
+      "Microsoft.Extensions.Caching.Abstractions/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.IdentityModel.JsonWebTokens/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "6.24.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+=======
+      "Microsoft.Extensions.Caching.Memory/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "3.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Options": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Caching.Memory.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.IdentityModel.Logging/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "6.24.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
+=======
+      "Microsoft.Extensions.Configuration/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.IdentityModel.Protocols/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "6.24.0",
+          "Microsoft.IdentityModel.Tokens": "6.24.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
+=======
+      "Microsoft.Extensions.Configuration.Abstractions/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "6.24.0",
+          "System.IdentityModel.Tokens.Jwt": "6.24.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+=======
+      "Microsoft.Extensions.Configuration.Binder/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.IdentityModel.Tokens/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Microsoft.IdentityModel.Logging": "6.24.0",
+          "System.Security.Cryptography.Cng": "4.5.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Json": "4.7.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {
+=======
+      "Microsoft.Extensions.DependencyInjection/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "Microsoft.SqlServer.Server/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Win32.Registry/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Security.AccessControl": "5.0.0",
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {
+=======
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "3.0.0",
+          "Microsoft.Extensions.DependencyInjection": "3.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Options": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Buffers/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Buffers.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "System.Configuration.ConfigurationManager/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Security.Permissions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+=======
+      "Microsoft.Extensions.Options/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.0.0",
+          "Microsoft.Extensions.Primitives": "3.0.0",
+          "System.ComponentModel.Annotations": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Data.SqlClient/4.8.5": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "System.IdentityModel.Tokens.Jwt/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
+          "Microsoft.IdentityModel.Tokens": "6.24.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+=======
+      "Microsoft.Identity.Client/4.47.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "6.22.0",
+          "System.Security.SecureString": "4.3.0",
+          "Xamarin.AndroidX.Browser": "1.0.0"
+        },
+        "frameworkAssemblies": [
+          "Java.Interop",
+          "Microsoft.CSharp",
+          "System",
+          "System.Core",
+          "System.IdentityModel",
+          "System.Net.Http",
+          "System.Runtime.Serialization",
+          "System.Xml",
+          "System.Xml.Linq"
+        ],
+        "compile": {
+          "lib/monoandroid10.0/Microsoft.Identity.Client.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+=======
+          "lib/monoandroid10.0/Microsoft.Identity.Client.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "System.Memory/4.5.4": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.dll": {
+=======
+      "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.38.0",
+          "System.Security.Cryptography.ProtectedData": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Memory.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        }
+      },
+<<<<<<< HEAD
+      "System.Memory.Data/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+=======
+      "Microsoft.IdentityModel.Abstractions/6.24.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.dll": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Runtime.Caching/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.0"
+        },
+        "compile": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+=======
           "lib/netstandard2.0/Microsoft.IdentityModel.Abstractions.dll": {
             "related": ".xml"
           }
@@ -217,10 +773,36 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.Loader/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.5/System.Runtime.Loader.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Security.AccessControl/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Principal.Windows": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+=======
           "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
             "related": ".xml"
           }
@@ -234,10 +816,75 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtime": {
+<<<<<<< HEAD
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "compile": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Permissions/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Security.Principal.Windows/5.0.0": {
+        "type": "package",
+=======
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
             "related": ".xml"
           }
@@ -302,277 +949,33 @@
           "System.Security.AccessControl": "5.0.0",
           "System.Security.Principal.Windows": "5.0.0"
         },
+>>>>>>> Sammy
         "compile": {
           "ref/netstandard2.0/_._": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Buffers/4.5.1": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Buffers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Configuration.ConfigurationManager/6.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "6.0.0",
-          "System.Security.Permissions": "6.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Data.SqlClient/4.8.5": {
-        "type": "package",
-        "compile": {
-          "ref/MonoAndroid10/_._": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Diagnostics.DiagnosticSource/4.6.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.IdentityModel.Tokens.Jwt/6.24.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
-          "Microsoft.IdentityModel.Tokens": "6.24.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Memory/4.5.4": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.5.1",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Memory.Data/1.0.2": {
-        "type": "package",
-        "dependencies": {
-          "System.Text.Encodings.Web": "4.7.2",
-          "System.Text.Json": "4.6.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Numerics.Vectors/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/MonoAndroid10/_._": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        }
-      },
-      "System.Runtime.Caching/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Configuration.ConfigurationManager": "6.0.0"
-        },
-        "compile": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Runtime.Loader/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard1.5/System.Runtime.Loader.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        }
-      },
-      "System.Security.AccessControl/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Security.Principal.Windows": "5.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Security.Cryptography.Cng/5.0.0": {
-        "type": "package",
-        "compile": {
-          "ref/MonoAndroid10/_._": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Security.Cryptography.ProtectedData/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Memory": "4.5.4"
-        },
-        "compile": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.Security.Permissions/6.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Security.AccessControl": "6.0.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/System.Security.Permissions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "System.Security.Principal.Windows/5.0.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
+<<<<<<< HEAD
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+=======
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+>>>>>>> Sammy
             "related": ".xml"
           }
         },
         "runtimeTargets": {
+<<<<<<< HEAD
           "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll": {
+=======
+          "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
+>>>>>>> Sammy
             "assetType": "runtime",
             "rid": "win"
           }
         }
       },
+<<<<<<< HEAD
       "System.Security.SecureString/4.3.0": {
         "type": "package",
         "compile": {
@@ -629,10 +1032,72 @@
         },
         "compile": {
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
+=======
+      "RestSharp/110.2.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Json": "7.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Buffers/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/4.6.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/6.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.ProtectedData": "6.0.0",
+          "System.Security.Permissions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {
+>>>>>>> Sammy
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+<<<<<<< HEAD
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {
             "related": ".xml"
           }
@@ -697,11 +1162,34 @@
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Migration": "1.0.8"
-        },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+=======
+          "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/4.6.0": {
+        "type": "package",
         "compile": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/6.24.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "6.24.0",
+          "Microsoft.IdentityModel.Tokens": "6.24.0"
+>>>>>>> Sammy
+        },
+        "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.Annotation.dll": {
             "related": ".pdb"
           }
@@ -724,11 +1212,26 @@
           "Xamarin.AndroidX.CursorAdapter": "1.0.0.5",
           "Xamarin.AndroidX.DrawerLayout": "1.1.1",
           "Xamarin.AndroidX.Fragment": "1.2.5.3"
+=======
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory/4.5.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.3"
+>>>>>>> Sammy
+        },
         "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.AppCompat.dll": {
             "related": ".pdb"
           }
@@ -749,11 +1252,26 @@
           "Xamarin.AndroidX.Core": "1.3.2",
           "Xamarin.AndroidX.VectorDrawable": "1.1.0.5",
           "Xamarin.AndroidX.VectorDrawable.Animated": "1.1.0.5"
+=======
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Memory.Data/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "4.7.2",
+          "System.Text.Json": "4.6.0"
+>>>>>>> Sammy
+        },
         "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.AppCompat.AppCompatResources.dll": {
             "related": ".pdb"
           }
@@ -794,11 +1312,28 @@
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.1.0.6",
           "Xamarin.AndroidX.Arch.Core.Common": "2.1.0.6"
+=======
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/netstandard2.0/System.Memory.Data.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Net.Http.Json/7.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.5.1",
+          "System.Memory": "4.5.5",
+          "System.Text.Json": "7.0.2",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+>>>>>>> Sammy
+        },
         "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.Arch.Core.Runtime.dll": {
             "related": ".pdb"
           }
@@ -806,8 +1341,24 @@
         "runtime": {
           "lib/monoandroid90/Xamarin.AndroidX.Arch.Core.Runtime.dll": {
             "related": ".pdb"
+=======
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
           }
         },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Json.dll": {
+            "related": ".xml"
+>>>>>>> Sammy
+          }
+        }
+      },
+      "System.Numerics.Vectors/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+<<<<<<< HEAD
         "build": {
           "buildTransitive/monoandroid90/Xamarin.AndroidX.Arch.Core.Runtime.targets": {}
         }
@@ -817,11 +1368,19 @@
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.1.0.1",
           "Xamarin.AndroidX.Core": "1.1.0.1"
+=======
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Runtime.Caching/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.0"
+>>>>>>> Sammy
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
         "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.AsyncLayoutInflater.dll": {
             "related": ".pdb"
           }
@@ -841,11 +1400,51 @@
           "Xamarin.AndroidX.Annotation": "1.1.0.7",
           "Xamarin.AndroidX.Core": "1.3.2",
           "Xamarin.Google.Guava.ListenableFuture": "1.0.0.2"
+=======
+          "lib/MonoAndroid10/_._": {}
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Runtime.Caching.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {
+        "type": "package",
         "compile": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.Loader/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.5/System.Runtime.Loader.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "System.Security.AccessControl/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Principal.Windows": "5.0.0"
+>>>>>>> Sammy
+        },
+        "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.Browser.dll": {
             "related": ".pdb"
           }
@@ -863,11 +1462,46 @@
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.1.0.1"
+=======
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.AccessControl.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Cng/5.0.0": {
+        "type": "package",
         "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4"
+>>>>>>> Sammy
+        },
+        "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.CardView.dll": {
             "related": ".pdb"
           }
@@ -885,11 +1519,27 @@
         "type": "package",
         "dependencies": {
           "Xamarin.AndroidX.Annotation": "1.1.0.6"
+=======
+          "lib/MonoAndroid10/_._": {}
         },
-        "frameworkAssemblies": [
-          "Java.Interop"
-        ],
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Permissions/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.AccessControl": "6.0.0"
+>>>>>>> Sammy
+        },
         "compile": {
+<<<<<<< HEAD
           "lib/monoandroid90/Xamarin.AndroidX.Collection.dll": {
             "related": ".pdb"
           }
@@ -897,12 +1547,22 @@
         "runtime": {
           "lib/monoandroid90/Xamarin.AndroidX.Collection.dll": {
             "related": ".pdb"
+=======
+          "lib/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Permissions.dll": {
+            "related": ".xml"
+>>>>>>> Sammy
           }
         },
         "build": {
           "buildTransitive/monoandroid90/Xamarin.AndroidX.Collection.targets": {}
         }
       },
+<<<<<<< HEAD
       "Xamarin.AndroidX.CoordinatorLayout/1.1.0.1": {
         "type": "package",
         "dependencies": {
@@ -4657,6 +5317,46 @@
           }
         }
       },
+=======
+      "System.Security.Principal.Windows/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.SecureString/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Security.SecureString.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Security.SecureString.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+>>>>>>> Sammy
       "System.Text.Encoding/4.3.0": {
         "type": "package",
         "compile": {
@@ -8082,6 +8782,7 @@
       "sha512": "u4jNEv9rd9g1ILZtQj2EJFzzovAb11K7o+rTVtLj8Jcjdg1QNVpikHpb6TxNncLmxpZ/IntnSk9YFs1CqTKD1w==",
       "type": "package",
       "path": "xamarin.androidx.annotation.experimental/1.3.0.2",
+<<<<<<< HEAD
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8107,11 +8808,41 @@
       "sha512": "+J4HTXPKaeoI7v+ifRyeXWCm2WYYzQ+72uR3ZDUVsXLdwUeVFzkF9qggM0XsgRkz0GvrKTF/F8imwZVERQR+EA==",
       "type": "package",
       "path": "xamarin.androidx.appcompat/1.6.1",
+=======
+>>>>>>> Sammy
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
+<<<<<<< HEAD
+=======
+        "aar/androidx.annotation.annotation-experimental.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Annotation.Experimental.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Annotation.Experimental.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Annotation.Experimental.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Annotation.Experimental.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Annotation.Experimental.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Annotation.Experimental.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Annotation.Experimental.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Annotation.Experimental.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Annotation.Experimental.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Annotation.Experimental.xml",
+        "xamarin.androidx.annotation.experimental.1.3.0.2.nupkg.sha512",
+        "xamarin.androidx.annotation.experimental.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.AppCompat/1.6.1": {
+      "sha512": "+J4HTXPKaeoI7v+ifRyeXWCm2WYYzQ+72uR3ZDUVsXLdwUeVFzkF9qggM0XsgRkz0GvrKTF/F8imwZVERQR+EA==",
+      "type": "package",
+      "path": "xamarin.androidx.appcompat/1.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+>>>>>>> Sammy
         "aar/androidx.appcompat.appcompat.aar",
         "build/monoandroid12.0/Xamarin.AndroidX.AppCompat.targets",
         "build/net6.0-android31.0/Xamarin.AndroidX.AppCompat.targets",
@@ -8351,6 +9082,7 @@
     },
     "Xamarin.AndroidX.Core.Core.Ktx/1.9.0.2": {
       "sha512": "tIt0IoXcg9sVn+JOesUwtYvnqFONCjiRugwCs5nREUzvhfRM40KeiWgCtfaHSacTB0JCIDJjsbBk/lGe1wp5wQ==",
+<<<<<<< HEAD
       "type": "package",
       "path": "xamarin.androidx.core.core.ktx/1.9.0.2",
       "files": [
@@ -8377,6 +9109,34 @@
     "Xamarin.AndroidX.CursorAdapter/1.0.0.16": {
       "sha512": "NskhZVJOXsMQPd0Ex2gVB5W2+hURvor+un/pXpss/RpVvWqayVepZ0f09A1GmL0xmNonAyb9EEpbmdJ7tqKH4w==",
       "type": "package",
+=======
+      "type": "package",
+      "path": "xamarin.androidx.core.core.ktx/1.9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.core.core-ktx.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Core.Core.Ktx.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Core.Core.Ktx.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Core.Core.Ktx.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Core.Core.Ktx.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Core.Core.Ktx.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Core.Core.Ktx.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Core.Core.Ktx.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Core.Core.Ktx.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Core.Core.Ktx.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Core.Core.Ktx.xml",
+        "xamarin.androidx.core.core.ktx.1.9.0.2.nupkg.sha512",
+        "xamarin.androidx.core.core.ktx.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.CursorAdapter/1.0.0.16": {
+      "sha512": "NskhZVJOXsMQPd0Ex2gVB5W2+hURvor+un/pXpss/RpVvWqayVepZ0f09A1GmL0xmNonAyb9EEpbmdJ7tqKH4w==",
+      "type": "package",
+>>>>>>> Sammy
       "path": "xamarin.androidx.cursoradapter/1.0.0.16",
       "files": [
         ".nupkg.metadata",
@@ -8468,6 +9228,7 @@
     },
     "Xamarin.AndroidX.Emoji2/1.2.0.2": {
       "sha512": "FrpHOQM2LYCDFpcXmvgu3U7XwXRN1zOJtZVbf0pncLGa71edk+CrPXReVjKCi1VettPv1vXnn0c4mm3pSQpWZg==",
+<<<<<<< HEAD
       "type": "package",
       "path": "xamarin.androidx.emoji2/1.2.0.2",
       "files": [
@@ -8519,6 +9280,59 @@
     "Xamarin.AndroidX.Fragment/1.5.5.1": {
       "sha512": "yLXT7W8+JmR0bgG/mR2AkL+Ft8T3nU7h0Qs+baNOPPiKw52hXV6mktUOne+itciEDHDTRB+01go/B8nLBXS3ig==",
       "type": "package",
+=======
+      "type": "package",
+      "path": "xamarin.androidx.emoji2/1.2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.emoji2.emoji2.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Emoji2.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Emoji2.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Emoji2.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.xml",
+        "xamarin.androidx.emoji2.1.2.0.2.nupkg.sha512",
+        "xamarin.androidx.emoji2.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Emoji2.ViewsHelper/1.2.0.2": {
+      "sha512": "f1l/vYueQmhDnIinO1sMInNpenQvaA2Hd00MMZw0mmgHG5y8D2RxE3tqAYw50lpWfqrUZDRpBknkF4Ex7G4l9g==",
+      "type": "package",
+      "path": "xamarin.androidx.emoji2.viewshelper/1.2.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.emoji2.emoji2-views-helper.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.ViewsHelper.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.ViewsHelper.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Emoji2.ViewsHelper.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Emoji2.ViewsHelper.xml",
+        "xamarin.androidx.emoji2.viewshelper.1.2.0.2.nupkg.sha512",
+        "xamarin.androidx.emoji2.viewshelper.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Fragment/1.5.5.1": {
+      "sha512": "yLXT7W8+JmR0bgG/mR2AkL+Ft8T3nU7h0Qs+baNOPPiKw52hXV6mktUOne+itciEDHDTRB+01go/B8nLBXS3ig==",
+      "type": "package",
+>>>>>>> Sammy
       "path": "xamarin.androidx.fragment/1.5.5.1",
       "files": [
         ".nupkg.metadata",
@@ -8628,6 +9442,7 @@
     },
     "Xamarin.AndroidX.Lifecycle.LiveData.Core/2.5.1.2": {
       "sha512": "Rabi0HzJGr2N3MKGxC6Ew3BKOui3c4cylUWGK7KDB+e09IVYdvZp59/f51x69HebEb8KtX4YQ+vdoREzOz2pgw==",
+<<<<<<< HEAD
       "type": "package",
       "path": "xamarin.androidx.lifecycle.livedata.core/2.5.1.2",
       "files": [
@@ -8635,6 +9450,54 @@
         ".signature.p7s",
         "LICENSE.md",
         "THIRD-PARTY-NOTICES.txt",
+        "aar/androidx.lifecycle.lifecycle-livedata-core.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.xml",
+        "xamarin.androidx.lifecycle.livedata.core.2.5.1.2.nupkg.sha512",
+        "xamarin.androidx.lifecycle.livedata.core.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.Lifecycle.Process/2.5.1.2": {
+      "sha512": "6H2wWC+I6sI+0iVs1RUhOVVwrhLum0y9DDAyY6Ut+cmGlK07SxlY55GJEQEAQlIzQ66YjXwql+t3ar/XjQseEw==",
+      "type": "package",
+      "path": "xamarin.androidx.lifecycle.process/2.5.1.2",
+=======
+      "type": "package",
+      "path": "xamarin.androidx.lifecycle.livedata.core/2.5.1.2",
+>>>>>>> Sammy
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+<<<<<<< HEAD
+        "aar/androidx.lifecycle.lifecycle-process.aar",
+        "build/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Process.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Process.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Process.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Process.targets",
+        "icon.png",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Process.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Process.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.Lifecycle.Process.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Process.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Process.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.Process.xml",
+        "proguard/proguard.txt",
+        "xamarin.androidx.lifecycle.process.2.5.1.2.nupkg.sha512",
+        "xamarin.androidx.lifecycle.process.nuspec"
+      ]
+    },
+=======
         "aar/androidx.lifecycle.lifecycle-livedata-core.aar",
         "build/monoandroid12.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
         "build/net6.0-android31.0/Xamarin.AndroidX.Lifecycle.LiveData.Core.targets",
@@ -8677,6 +9540,7 @@
         "xamarin.androidx.lifecycle.process.nuspec"
       ]
     },
+>>>>>>> Sammy
     "Xamarin.AndroidX.Lifecycle.Runtime/2.5.1.2": {
       "sha512": "MEmxMUYL8gyyLKTSknIjnqU7SCLSyP1D24strJxneapwVVTlMgkPeeXIgIE8TVK5xc3mZTzyPHDd3v+D81+Eqw==",
       "type": "package",
@@ -8904,6 +9768,7 @@
     },
     "Xamarin.AndroidX.ResourceInspection.Annotation/1.0.1.4": {
       "sha512": "F7Ql89fESugok5bZ0mepFmVsZtdVvGeJN+z/0sXNrP62XcLXMZY6R38lOlQGlqqBHnZ0abmECYw+Zov4JP16oQ==",
+<<<<<<< HEAD
       "type": "package",
       "path": "xamarin.androidx.resourceinspection.annotation/1.0.1.4",
       "files": [
@@ -8930,6 +9795,34 @@
     "Xamarin.AndroidX.SavedState/1.2.0.2": {
       "sha512": "H5hpkx6D45csJYixiJR2Y2cBCjiltDpLQmzC6TciJvtnPlTyqxji1orl/qu9lbFoF9SV+V7qyJaL3nAPrtMXHQ==",
       "type": "package",
+=======
+      "type": "package",
+      "path": "xamarin.androidx.resourceinspection.annotation/1.0.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "THIRD-PARTY-NOTICES.txt",
+        "build/monoandroid12.0/Xamarin.AndroidX.ResourceInspection.Annotation.targets",
+        "build/net6.0-android31.0/Xamarin.AndroidX.ResourceInspection.Annotation.targets",
+        "buildTransitive/monoandroid12.0/Xamarin.AndroidX.ResourceInspection.Annotation.targets",
+        "buildTransitive/net6.0-android31.0/Xamarin.AndroidX.ResourceInspection.Annotation.targets",
+        "icon.png",
+        "jar/androidx.resourceinspection.resourceinspection-annotation.jar",
+        "lib/monoandroid12.0/Xamarin.AndroidX.ResourceInspection.Annotation.dll",
+        "lib/monoandroid12.0/Xamarin.AndroidX.ResourceInspection.Annotation.pdb",
+        "lib/monoandroid12.0/Xamarin.AndroidX.ResourceInspection.Annotation.xml",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.ResourceInspection.Annotation.dll",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.ResourceInspection.Annotation.pdb",
+        "lib/net6.0-android31.0/Xamarin.AndroidX.ResourceInspection.Annotation.xml",
+        "xamarin.androidx.resourceinspection.annotation.1.0.1.4.nupkg.sha512",
+        "xamarin.androidx.resourceinspection.annotation.nuspec"
+      ]
+    },
+    "Xamarin.AndroidX.SavedState/1.2.0.2": {
+      "sha512": "H5hpkx6D45csJYixiJR2Y2cBCjiltDpLQmzC6TciJvtnPlTyqxji1orl/qu9lbFoF9SV+V7qyJaL3nAPrtMXHQ==",
+      "type": "package",
+>>>>>>> Sammy
       "path": "xamarin.androidx.savedstate/1.2.0.2",
       "files": [
         ".nupkg.metadata",

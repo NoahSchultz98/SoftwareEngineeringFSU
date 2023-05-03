@@ -2,6 +2,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {}
   },
   "projects": {
@@ -76,6 +77,16 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
         "projectName": "Codeholic",
+=======
+    "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+        "projectName": "Codeholic",
+>>>>>>> Sammy
         "projectPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
         "packagesPath": "C:\\Users\\Rallei\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\obj\\",

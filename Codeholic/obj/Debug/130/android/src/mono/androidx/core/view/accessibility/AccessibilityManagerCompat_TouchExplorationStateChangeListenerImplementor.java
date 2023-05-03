@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 package mono.androidx.core.view.accessibility;
 
 
@@ -49,6 +50,8 @@ public class AccessibilityManagerCompat_TouchExplorationStateChangeListenerImple
 	}
 }
 =======
+=======
+>>>>>>> Sammy
 package mono.androidx.core.view.accessibility;
 
 
@@ -98,4 +101,7 @@ public class AccessibilityManagerCompat_TouchExplorationStateChangeListenerImple
 			refList.clear ();
 	}
 }
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

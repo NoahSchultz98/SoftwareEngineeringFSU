@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Sammy
 package crc648316b0a9aa8cfd61;
 
 
@@ -47,6 +50,7 @@ public class BrowserTabActivity
 			refList.clear ();
 	}
 }
+<<<<<<< HEAD
 =======
 package crc648316b0a9aa8cfd61;
 
@@ -97,3 +101,5 @@ public class BrowserTabActivity
 	}
 }
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy

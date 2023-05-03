@@ -4469,6 +4469,7 @@ public final class R {
   public static final class id {
     public static final int ALT=0x7f080000;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static final int ButtonLogin=0x7f080001;
     public static final int ButtonSkipLogin=0x7f080002;
     public static final int CTRL=0x7f080003;
@@ -4608,6 +4609,8 @@ public final class R {
     public static final int message=0x7f080089;
     public static final int messagePass=0x7f08008a;
 =======
+=======
+>>>>>>> Sammy
     public static final int CTRL=0x7f080001;
     public static final int FUNCTION=0x7f080002;
     public static final int META=0x7f080003;
@@ -4746,7 +4749,10 @@ public final class R {
     public static final int list_item=0x7f080088;
     public static final int masked=0x7f080089;
     public static final int message=0x7f08008a;
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy
     public static final int middle=0x7f08008b;
     public static final int mini=0x7f08008c;
     public static final int mtrl_child_content_container=0x7f08008d;
@@ -4770,6 +4776,7 @@ public final class R {
     public static final int parentPanel=0x7f08009f;
     public static final int parent_matrix=0x7f0800a0;
     public static final int pin=0x7f0800a1;
+<<<<<<< HEAD
 <<<<<<< HEAD
     public static final int progress_circular=0x7f0800a2;
     public static final int progress_horizontal=0x7f0800a3;
@@ -4857,6 +4864,8 @@ public final class R {
     public static final int withText=0x7f0800f5;
     public static final int wrap_content=0x7f0800f6;
 =======
+=======
+>>>>>>> Sammy
     public static final int pluginDescription=0x7f0800a2;
     public static final int pluginName=0x7f0800a3;
     public static final int progress_circular=0x7f0800a4;
@@ -4956,7 +4965,10 @@ public final class R {
     public static final int visible_removing_fragment_view_tag=0x7f080102;
     public static final int withText=0x7f080103;
     public static final int wrap_content=0x7f080104;
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f090000;
@@ -5035,6 +5047,7 @@ public final class R {
     public static final int design_navigation_menu=0x7f0b002b;
     public static final int design_navigation_menu_item=0x7f0b002c;
     public static final int design_text_input_password_icon=0x7f0b002d;
+<<<<<<< HEAD
     public static final int layout1=0x7f0b002e;
     public static final int line_number_edit_text=0x7f0b002f;
     public static final int mtrl_layout_snackbar=0x7f0b0030;
@@ -5046,6 +5059,19 @@ public final class R {
     public static final int notification_template_icon_group=0x7f0b0036;
     public static final int notification_template_part_chronometer=0x7f0b0037;
     public static final int notification_template_part_time=0x7f0b0038;
+=======
+    public static final int mtrl_layout_snackbar=0x7f0b002e;
+    public static final int mtrl_layout_snackbar_include=0x7f0b002f;
+    public static final int notification_action=0x7f0b0030;
+    public static final int notification_action_tombstone=0x7f0b0031;
+    public static final int notification_template_custom_big=0x7f0b0032;
+    public static final int notification_template_icon_group=0x7f0b0033;
+    public static final int notification_template_part_chronometer=0x7f0b0034;
+    public static final int notification_template_part_time=0x7f0b0035;
+    public static final int pluginmanagementsystem=0x7f0b0036;
+    public static final int pluginmanager=0x7f0b0037;
+    public static final int pluginuploader=0x7f0b0038;
+>>>>>>> Sammy
     public static final int select_dialog_item_material=0x7f0b0039;
     public static final int select_dialog_multichoice_material=0x7f0b003a;
     public static final int select_dialog_singlechoice_material=0x7f0b003b;
@@ -5088,6 +5114,7 @@ public final class R {
     public static final int abc_shareactionprovider_share_with_application=0x7f0e0019;
     public static final int abc_toolbar_collapse_description=0x7f0e001a;
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static final int app_name=0x7f0e001b;
     public static final int appbar_scrolling_view_behavior=0x7f0e001c;
     public static final int bottom_sheet_behavior=0x7f0e001d;
@@ -5118,6 +5145,8 @@ public final class R {
     public static final int title_pass=0x7f0e0036;
     public static final int title_user=0x7f0e0037;
 =======
+=======
+>>>>>>> Sammy
     public static final int androidx_startup=0x7f0e001b;
     public static final int app_name=0x7f0e001c;
     public static final int appbar_scrolling_view_behavior=0x7f0e001d;
@@ -5142,7 +5171,10 @@ public final class R {
     public static final int title_dashboard=0x7f0e0030;
     public static final int title_home=0x7f0e0031;
     public static final int title_notifications=0x7f0e0032;
+<<<<<<< HEAD
 >>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
+=======
+>>>>>>> Sammy
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0f0000;
