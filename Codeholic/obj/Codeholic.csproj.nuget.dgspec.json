@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {}
+    "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {
+    "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+        "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
         "projectName": "Codeholic",
-        "projectPath": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
-        "packagesPath": "C:\\Users\\xfouc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\xfouc\\OneDrive\\Documents\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
+        "projectPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+        "packagesPath": "C:\\Users\\Rallei\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -42,13 +42,21 @@
               "target": "Package",
               "version": "[5.1.1, )"
             },
-            "System.Data.SqlClient": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[4.8.5, )"
+              "version": "[3.0.0, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[110.2.0, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[7.0.1, )"
             },
             "Xamarin.AndroidX.AppCompat": {
               "target": "Package",
-              "version": "[1.2.0.5, )"
+              "version": "[1.6.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
