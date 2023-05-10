@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 3,
   "targets": {
@@ -10308,7 +10309,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xfouc\\.nuget\\packages\\": {},
+    "C:\\Users\\Rallei\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
@@ -10325,7 +10326,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\xfouc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rallei\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -10377,4 +10378,5 @@
       }
     }
   }
+>>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
 }

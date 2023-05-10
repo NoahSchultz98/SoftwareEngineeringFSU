@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "version": 2,
 <<<<<<< HEAD
@@ -215,4 +216,5 @@
     "C:\\Users\\Rallei\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.6.4.2\\xamarin.kotlinx.coroutines.core.jvm.1.6.4.2.nupkg.sha512"
   ],
   "logs": []
+>>>>>>> 0ab5a17... plugin manager and plugin uploader both functional (pull data from DB and populate fields, update DB when fields are changed). added DatabaseConnection.cs for sending SQL queries.
 }
