@@ -10,4 +10,7 @@
   <string name="login">login</string>
   <string name="loginSkip">Continue</string>
   <string name="start_coding">Start writing code here!</string>
+  <string name="textView1">Enter your email </string>
+  <string name="textView2">Enter your username </string>
+  <string name="textView3">Enter your password </string>
 </resources>

@@ -72,6 +72,13 @@
         android:layout_centerHorizontal="true"
         android:text="@string/loginSkip"/>        
         />
-
+    <Button
+        android:id="@+id/ButtonSignUp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="500dp"
+        android:layout_centerHorizontal="true"
+        android:text="Sign Up"/>        
+        />
 </RelativeLayout>
 

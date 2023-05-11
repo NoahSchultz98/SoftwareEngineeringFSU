@@ -48,6 +48,10 @@ namespace Codeholic
             // for test:
             //getID();
 
+            Button SignUpButton = FindViewById<Button>(Resource.Id.ButtonSignUp);
+
+            SignUpButton.Click += OnSignUpPress;
+
             Button LoginButton = FindViewById<Button>(Resource.Id.ButtonLogin);
 
             LoginButton.Click += OnLoginPress;
@@ -105,6 +109,14 @@ namespace Codeholic
                     return true;
             }
             return false;
+        }
+
+        public void OnSignUpPress(object sender, EventArgs e)
+        {
+            //Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
+
+            Intent SignupIntent = new Intent(this, typeof(SignUpActivity));
+            StartActivity(SignupIntent);
         }
 
         public void OnLoginPress(object sender, EventArgs e)
