@@ -6,9 +6,31 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">  
+    <!--
+    <LinearLayout
+        android:id="@id/container"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+    <Button
+        android:id="@+id/ButtonSave"
+        android:layout_width="100dp "
+        android:layout_height="60dp"
+        android:text="save" />
 
+    <Button
+        android:id="@+id/ButtonLogout"
+        android:layout_width=" 100dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:text="logout" />
+    </LinearLayout>
+    -->
     <include
         layout="@layout/KolbyButtons" />
+
+
+
 
     <include
         layout="@layout/line_number_edit_text" />
