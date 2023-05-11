@@ -41,6 +41,12 @@ namespace Codeholic
             editTextWindow = FindViewById<EditText>(Resource.Id.editTextWindow);
             lineNumbers = FindViewById<TextView>(Resource.Id.lineNumbers);
 
+            Button ButtonSave = FindViewById<Button>(Resource.Id.ButtonSave);
+            Button ButtonLogout = FindViewById<Button>(Resource.Id.ButtonLogout);
+
+            ButtonSave.Click += OnSavePress;
+            ButtonLogout.Click += OnLogoutPress;
+
             editTextWindow.AddTextChangedListener(new MyTextWatcher(this));//
 
             textMessage = FindViewById<TextView>(Resource.Id.message);
@@ -80,7 +86,20 @@ namespace Codeholic
             }
             lineNumbers.Text = sb.ToString();
         }
-        
+
+
+        public void OnSavePress(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Save Clicked", ToastLength.Short).Show();
+
+        }
+
+        public void OnLogoutPress(object sender, EventArgs e)
+        {
+            Toast.MakeText(this, "Logout Clicked", ToastLength.Short).Show();
+
+        }
+
         private class MyOnScrollChangedListener : Java.Lang.Object, ViewTreeObserver.IOnScrollChangedListener
         {
             private NoahActivity activity;

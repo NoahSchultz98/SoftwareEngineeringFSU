@@ -8,7 +8,11 @@
     android:layout_height="match_parent">  
 
     <include
+        layout="@layout/KolbyButtons" />
+
+    <include
         layout="@layout/line_number_edit_text" />
+
 
     <include
         layout="@layout/nav_bar" />
