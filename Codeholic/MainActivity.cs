@@ -23,6 +23,8 @@ namespace Codeholic
     public class MainActivity : AppCompatActivity, BottomNavigationView.IOnNavigationItemSelectedListener//, GestureDetector.IOnGestureListener
     {
         TextView textMessage;
+        EditText nameInput;
+        EditText passInput;
         //internal bool isScrolling;
 
         protected override async void OnCreate(Bundle savedInstanceState)
@@ -52,9 +54,14 @@ namespace Codeholic
 
             SignUpButton.Click += OnSignUpPress;
 
+            nameInput = FindViewById<EditText>(Resource.Id.enterUser);
+            passInput = FindViewById<EditText>(Resource.Id.enterPass);
+
             Button LoginButton = FindViewById<Button>(Resource.Id.ButtonLogin);
 
             LoginButton.Click += OnLoginPress;
+
+
 
             Button LoginSkipButton = FindViewById<Button>(Resource.Id.ButtonSkipLogin);
 
@@ -121,10 +128,29 @@ namespace Codeholic
 
         public void OnLoginPress(object sender, EventArgs e)
         {
-            Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
 
-            Intent Noahintent = new Intent(this, typeof(NoahActivity));
-            StartActivity(Noahintent);
+            string username;
+            string password;
+            
+            username = nameInput.EditableText.ToString();
+            password = passInput.EditableText.ToString();
+
+            // pass user and pass into sql querey
+            // check the condition of the thing
+            // evaluate with a boolean
+            Boolean condition = username == "username" && password == "password";
+
+            if (condition) {
+                Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
+
+                Intent Noahintent = new Intent(this, typeof(NoahActivity));
+                StartActivity(Noahintent);
+            }
+            else {
+                Toast.MakeText(this, "Incorrect Username or Password", ToastLength.Short).Show();
+            }
+
+
         }
 
         public void OnSkipLoginPress(object sender, EventArgs e)
