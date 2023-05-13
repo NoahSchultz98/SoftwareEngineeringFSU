@@ -16,6 +16,8 @@ using System.Net;
 using Codeholic.Resources;
 using Codeholic.SQL;
 using System.Text.Json;
+using System.Linq;
+//using System.Data.Entity;
 
 namespace Codeholic
 {
@@ -25,9 +27,9 @@ namespace Codeholic
         TextView textMessage;
         EditText nameInput;
         EditText passInput;
-        //internal bool isScrolling;
+        internal bool isScrolling;
 
-        protected override async void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             //ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => true;
 
@@ -62,7 +64,6 @@ namespace Codeholic
             LoginButton.Click += OnLoginPress;
 
 
-
             Button LoginSkipButton = FindViewById<Button>(Resource.Id.ButtonSkipLogin);
 
             LoginSkipButton.Click += OnSkipLoginPress;
@@ -72,8 +73,6 @@ namespace Codeholic
         private async void TestConn()
         {
             Codeholic.Resources.WebResponse response = await DatabaseConnection.Query("SELECT * FROM user WHERE userID = 1");
-
-
 
             SQL.User theUserFound = JsonSerializer.Deserialize<User>(response.data);
             Toast.MakeText(Android.App.Application.Context, "Greetings from " + theUserFound.username, ToastLength.Long).Show();
@@ -101,15 +100,15 @@ namespace Codeholic
             {
                 // when we click the home, dash, notifications button, it just changes the text message. okay. simple enough. we can make mine open up the plugin manager.
                 case Resource.Id.navigation_home:
-                    textMessage.SetText(Resource.String.title_home);
+                    //textMessage.SetText(Resource.String.title_home);
                     Intent Noahintent = new Intent(this, typeof(NoahActivity));
                     StartActivity(Noahintent);
                     return true;
                 case Resource.Id.navigation_dashboard:
-                    textMessage.SetText(Resource.String.title_dashboard);
+                    //textMessage.SetText(Resource.String.title_dashboard);
                     return true;
                 case Resource.Id.navigation_notifications:
-                    textMessage.Text = "Plugin Manager"; // just a hack for now
+                    //textMessage.Text = "Plugin Manager"; // just a hack for now
                     // code to begin new activity
                     Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
                     StartActivity(nextActivity);
@@ -126,31 +125,32 @@ namespace Codeholic
             StartActivity(SignupIntent);
         }
 
-        public void OnLoginPress(object sender, EventArgs e)
+        public async void OnLoginPress(object sender, EventArgs e)
         {
 
-            string username;
-            string password;
-            
-            username = nameInput.EditableText.ToString();
-            password = passInput.EditableText.ToString();
+            string username = nameInput.EditableText.ToString();
+            string password = passInput.EditableText.ToString();
 
-            // pass user and pass into sql querey
-            // check the condition of the thing
-            // evaluate with a boolean
-            Boolean condition = username == "username" && password == "password";
+            //Boolean condition = username == "username" && password == "password";
+            //string connection = "temporary value";
 
-            if (condition) {
+            string myQuery = "Select * from user where username = '" + username + "'";
+            myQuery += " and password = '" + password + "'";
+
+            try
+            { // try to login
+                var result = await DatabaseConnection.Query(myQuery);
+                User user = JsonSerializer.Deserialize<User>(result.data);
+
                 Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
 
                 Intent Noahintent = new Intent(this, typeof(NoahActivity));
                 StartActivity(Noahintent);
             }
-            else {
+            catch { // catch when query fails OR invalid login
                 Toast.MakeText(this, "Incorrect Username or Password", ToastLength.Short).Show();
             }
-
-
+            
         }
 
         public void OnSkipLoginPress(object sender, EventArgs e)

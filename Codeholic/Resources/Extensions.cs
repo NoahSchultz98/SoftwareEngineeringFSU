@@ -162,7 +162,9 @@ namespace Codeholic.Resources
             }
             catch (Exception e)
             {
-                throw;
+
+                return e.Message;
+                //throw;
                 //Toast.MakeText(Android.App.Application.Context, "An error was encountered in attempting to open the connection: " + e.Message, ToastLength.Long).Show();
 
                 //return e.StackTrace;
