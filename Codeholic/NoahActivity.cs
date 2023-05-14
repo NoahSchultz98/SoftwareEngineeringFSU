@@ -24,6 +24,8 @@ namespace Codeholic
         TextView textMessage;
         //int view = Resource.Layout.layout1;
 
+        // login information
+
         private EditText editTextWindow;
         private TextView lineNumbers;
         private ScrollView scrollView;
@@ -36,7 +38,6 @@ namespace Codeholic
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
             SetContentView(Resource.Layout.layout1);
-
 
             editTextWindow = FindViewById<EditText>(Resource.Id.editTextWindow);
             lineNumbers = FindViewById<TextView>(Resource.Id.lineNumbers);
@@ -62,15 +63,18 @@ namespace Codeholic
             switch (item.ItemId)
             {
                 case Resource.Id.navigation_home:
-                    textMessage.SetText(Resource.String.title_home);
+                    //textMessage.SetText(Resource.String.title_home);
                     Intent Noahintent = new Intent(this, typeof(NoahActivity));
                     StartActivity(Noahintent);
                     return true;
                 case Resource.Id.navigation_dashboard:
-                    textMessage.SetText(Resource.String.title_dashboard);
+                    //textMessage.SetText(Resource.String.title_dashboard);
                     return true;
                 case Resource.Id.navigation_notifications:
-                    textMessage.SetText(Resource.String.title_notifications);
+                    textMessage.Text = "Plugin Manager"; // just a hack for now
+                    // code to begin new activity
+                    Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
+                    StartActivity(nextActivity);
                     return true;
             }
             return false;

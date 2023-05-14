@@ -26,11 +26,9 @@
         android:text="logout" />
     </LinearLayout>
     -->
+
     <include
         layout="@layout/KolbyButtons" />
-
-
-
 
     <include
         layout="@layout/line_number_edit_text" />
