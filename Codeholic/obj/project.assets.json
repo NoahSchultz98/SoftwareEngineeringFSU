@@ -5612,11 +5612,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+      "projectUniqueName": "C:\\Users\\Rallei\\Source\\Repos\\NoahSchultz98\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
       "projectName": "Codeholic",
-      "projectPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
+      "projectPath": "C:\\Users\\Rallei\\Source\\Repos\\NoahSchultz98\\SoftwareEngineeringFSU\\Codeholic\\Codeholic.csproj",
       "packagesPath": "C:\\Users\\Rallei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rallei\\Source\\Repos\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
+      "outputPath": "C:\\Users\\Rallei\\Source\\Repos\\NoahSchultz98\\SoftwareEngineeringFSU\\Codeholic\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
