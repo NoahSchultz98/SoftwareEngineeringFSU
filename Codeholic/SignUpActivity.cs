@@ -57,28 +57,26 @@ namespace Codeholic
             string myQuery = "insert into user (userType, username, password, firstName, lastName, email) ";
             myQuery += "values (0, '"+ username +"', '"+ password+"', 'BLANK', 'BLANK', '"+email+"');";
 
+            // insert into the database 
+            var result = await DatabaseConnection.Query(myQuery);
 
-            try // this is throwing even though the user was being added to the database
-            {
-                // i guess var can only be local, so trying to pass it in a throw
-                //      is not somthing I can do. 
-                // throws " '<' is an invalid start of value. 
-                // which I think is a problem with the query, but now sure how. 
-                var result = await DatabaseConnection.Query(myQuery);
-
-                Toast.MakeText(this, "You have made an account!", ToastLength.Short).Show();
-
-                //User user = JsonSerializer.Deserialize<User>(result.data);
-
-                Intent Noahintent = new Intent(this, typeof(NoahActivity));
-                StartActivity(Noahintent);
+            if (result != null && result.data == "false")
+            { // if result is false the username is taken
+                Toast.MakeText(this, "That username is taken", ToastLength.Short).Show();
+                return;
             }
-            catch(Exception ex) 
-            { // this should happen when there are duplicate usernames 
-
-                Toast.MakeText(this, ex.Message, ToastLength.Long).Show();
-
+            else if (result == null) { // if the result is null the query did something weird
+                Toast.MakeText(this, "NULL RESULT", ToastLength.Short).Show();
+                return;
             }
+
+            // test to see if the query was successful 
+
+            Toast.MakeText(this, "You have made an account!", ToastLength.Short).Show();
+
+            Intent SignInActivity = new Intent(this, typeof(MainActivity));
+            StartActivity(SignInActivity);
+
         }
         
         public bool OnNavigationItemSelected(IMenuItem item)
