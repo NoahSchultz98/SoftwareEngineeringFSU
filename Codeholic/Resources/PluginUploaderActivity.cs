@@ -11,7 +11,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using System.IO;
-using Android.Webkit;
 
 namespace Codeholic.Resources
 {
@@ -20,26 +19,23 @@ namespace Codeholic.Resources
     {
         EditText pluginNameEditText;
         EditText pluginDescriptionEditText;
-        FileResult lastPluginFileResult;
-        FileResult lastHelpDocFileResult;
+        FileResult lastFileResult;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            
             // Create your application here
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.PluginUploader);
-
-            Button pluginFileSelectorButton = FindViewById<Button>(Resource.Id.btnSelectPluginFile);
-            pluginFileSelectorButton.Click += PluginFileSelectorButton_Click;
-
-            Button helpdocFileSelectorButton = FindViewById<Button>(Resource.Id.btnSelectHelpDocFile);
-            helpdocFileSelectorButton.Click += HelpDocFileSelectorButton_Click;
+            
+            Button fileSelectorButton = FindViewById<Button>(Resource.Id.btnSelectFile);
+            fileSelectorButton.Click += FileSelectorButton_Click;
 
             Button fileUploaderButton = FindViewById<Button>(Resource.Id.btnUploadPlugin);
             fileUploaderButton.Click += FileUploaderButton_Click;
 
+            TextView selectedFileLabel = FindViewById<TextView>(Resource.Id.labelSelectedFile);
 
             pluginNameEditText = FindViewById<EditText>(Resource.Id.pluginName);
             pluginDescriptionEditText = FindViewById<EditText>(Resource.Id.pluginDescription);
@@ -58,79 +54,22 @@ namespace Codeholic.Resources
 
             // get data from selected file...
             // 
-
             string fileData = "placeholder data";
-            string helpDocData = "placeholder data";
-            if (lastPluginFileResult == null)
-            {
-                Toast.MakeText(Android.App.Application.Context, "Please select a plugin file first.", ToastLength.Long).Show();
-                return;
-            }
-            else
+
+            if(lastFileResult != null)
             {
                 // open, read file
-                fileData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastPluginFileResult.FileName));
-            }
-            if(lastHelpDocFileResult == null)
-            {
-                AlertDialog.Builder helpDocAlert = new AlertDialog.Builder(this);
-                helpDocAlert.SetTitle("Upload plugin without help documentation?");
-
-
-                helpDocAlert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
-
-                    // continue execution...
-                    UploadThePlugin();
-                });
-                helpDocAlert.SetNegativeButton("No thanks", (senderAlert, args) => {
-
-                    // stop execution...
-
-                    return;
-
-                });
-                RunOnUiThread(() => { helpDocAlert.Show(); });
-
-            }
-            else
-            {
-                helpDocData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastHelpDocFileResult.FileName));
-                UploadThePlugin();
+                fileData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastFileResult.FileName));
             }
 
-            void UploadThePlugin()
-            {
+            Toast.MakeText(Android.App.Application.Context, Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastFileResult.FileName), ToastLength.Long).Show();
 
-                // alert the user that they are about to overwrite file 
-                //var result = await p.DisplayActionSheet("Overwrite plugin?", "No", null, "Yes");
-                AlertDialog.Builder alert = new AlertDialog.Builder(this);
-                alert.SetTitle("Upload plugin?");
-                alert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
-
-                    var result = await DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, helpDocData, pluginNameEditText.Text, pluginDescriptionEditText.Text));
-
-                    if (result)
-                    {
-                        Toast.MakeText(Android.App.Application.Context, "Successfully updated plugin data.", ToastLength.Long).Show();
-                    }
-                    else
-                    {
-                        Toast.MakeText(Android.App.Application.Context, "Failed to update plugin data.", ToastLength.Long).Show();
-                    }
-
-                });
-                alert.SetNegativeButton("No thanks", (senderAlert, args) => {
-                    //perform your own task for this conditional button click
-
-                    return;
-
-                });
-                RunOnUiThread(() => { alert.Show(); });
-            }
+            var result = DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, pluginNameEditText.Text, pluginDescriptionEditText.Text));
+            //Toast.MakeText(Android.App.Application.Context, "Result: " + result.Result, ToastLength.Long).Show();
 
         }
 
-        private void PluginFileSelectorButton_Click(object sender, EventArgs e)
+        private void FileSelectorButton_Click(object sender, EventArgs e)
         {
             /*
             Intent intent = new Intent();
@@ -138,37 +77,14 @@ namespace Codeholic.Resources
             intent.SetAction(Intent.ActionGetContent);
             StartActivityForResult(Intent.CreateChooser(intent, "Select file"), 1);
             */
-
+            
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                //var result = await PickAndShow(PickOptions.Images);
-                var result = await Extensions.PickFile();
-                lastPluginFileResult = result;
-                FindViewById<TextView>(Resource.Id.labelSelectedPluginFile).Text = lastPluginFileResult.FullPath;
+                var result = await PickAndShow(PickOptions.Images);
+                lastFileResult = result;
             });
-
+            
         }
-
-        private void HelpDocFileSelectorButton_Click(object sender, EventArgs e)
-        {
-            /*
-            Intent intent = new Intent();
-            intent.SetType("text/plain");
-            intent.SetAction(Intent.ActionGetContent);
-            StartActivityForResult(Intent.CreateChooser(intent, "Select file"), 1);
-            */
-
-            MainThread.BeginInvokeOnMainThread(async () =>
-            {
-                //var result = await PickAndShow(PickOptions.Images);
-                var result = await Extensions.PickFile();
-                lastHelpDocFileResult = result;
-                FindViewById<TextView>(Resource.Id.labelSelectedHelpDocFile).Text = lastPluginFileResult.FullPath;
-
-            });
-
-        }
-
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
@@ -192,5 +108,71 @@ namespace Codeholic.Resources
             }
 
         }
+
+        async Task<FileResult> PickAndShow(PickOptions options)
+        {
+            try
+            {
+                var result = await FilePicker.PickAsync();
+
+                if (result != null)
+                {
+                    FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = $"File Name: {result.FileName}";
+                    var stream = await result.OpenReadAsync();
+                    // write this to a string and send it to the db
+                    //Extensions.uploadPlugin(new Plugin("")); // data should go here, in future
+                }
+
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+                // The user canceled or something went wrong
+                _ = ex;
+            }
+
+            return null;
+        }
+
+        async Task<FileResult> PickAFileMaybe()
+        {
+
+            try
+            {
+                var file = await FilePicker.PickAsync();
+                if (file == null)
+                {
+                    FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = "nope, sorry";
+                    return null;
+                }
+                FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = file.FileName;
+                return file;
+            }
+            catch
+            {
+
+            }
+            // attempt 2
+            try
+            {
+                var file = await FilePicker.PickAsync();
+
+                if (file == null)
+                {
+
+                    FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = "nope, sorry (2)";
+                    return null;
+                }
+
+                FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = file.FileName + " from method 2";
+                return file;
+            }
+            catch
+            {
+
+            }
+            return null;
+        }
+
     }
 }

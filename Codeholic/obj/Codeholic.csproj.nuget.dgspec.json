@@ -58,21 +58,13 @@
               "target": "Package",
               "version": "[1.6.1, )"
             },
-            "Xamarin.AndroidX.Core": {
-              "target": "Package",
-              "version": "[1.9.0.1, )"
-            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
             },
-            "Xamarin.Forms": {
-              "target": "Package",
-              "version": "[5.0.0.2578, )"
-            },
             "Xamarin.Google.Android.Material": {
               "target": "Package",
-              "version": "[1.5.0, )"
+              "version": "[1.0.0.1, )"
             }
           }
         }
