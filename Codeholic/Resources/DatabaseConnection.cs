@@ -23,12 +23,21 @@ namespace Codeholic.Resources
         // set this to a user to 'log in', unset to 'log out'
         public static User currentUser;
 
-        public static int currentUserID { get { if (currentUser != null) return currentUser.userID; else return -1; } } // not -1 = logged in -- login can set this variable to enable functions. unset to 'log out'. it's like a key in the ignition
-
+        public static int currentUserID { get { if (currentUser != null) return currentUser.userID; else return 1; } } // not -1 = logged in -- login can set this variable to enable functions. unset to 'log out'. it's like a key in the ignition
+        // returns pluginDeveloper by default until database integration
+        public static UserType currentUserType { get { if (currentUser != null) return currentUser.userType; else return UserType.pluginDeveloper; } }
 
         // address of the local server
         private static string URI = "http://192.168.1.4/Codeaholic/access.php";
         
+
+        public static bool HavePrivilege(UserType privilegeLevel)
+        {
+            if (currentUserType >= privilegeLevel)
+                return true;
+            else
+                return false;
+        }
 
         public async static Task<WebResponse> Query(string _query)
         {
@@ -54,12 +63,57 @@ namespace Codeholic.Resources
                     PropertyNameCaseInsensitive = true
                 };
 
-                WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
-                // could try/catch here
-                return data;
+                try
+                {
+                    WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long).Show();
+                    return null;
+                }
             }
         }
-        
+
+        // data.data will contain an error message in the case of an error on the server side
+        public async static Task<WebResponse> QueryWithErrorReporting(string _query)
+        {
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "queryWithErrorReporting",
+                    query = _query
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                try
+                {
+                    WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                    return data;
+                }
+                catch (Exception ex)
+                {
+                    Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long).Show();
+                    return null;
+                }
+            }
+        }
+
         public async static Task<User> GetUserInfo()
         {
             using (HttpClientHandler clientHandler = new HttpClientHandler())
@@ -86,7 +140,7 @@ namespace Codeholic.Resources
 
                 WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
                 // could try/catch here
-                Toast.MakeText(Android.App.Application.Context, data.data, ToastLength.Long).Show();
+                //Toast.MakeText(Android.App.Application.Context, data.data, ToastLength.Long).Show();
                 User user = JsonSerializer.Deserialize<User>(data.data);
 
                 return user;
@@ -95,7 +149,8 @@ namespace Codeholic.Resources
 
         public async static Task<bool> UploadPlugin(SQL.Plugin plugin)
         {
-            
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
 
             using (HttpClientHandler clientHandler = new HttpClientHandler())
             {
@@ -125,9 +180,9 @@ namespace Codeholic.Resources
 
                 WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
                 // want to get the result as bool
-                Toast.MakeText(Android.App.Application.Context, "Result: " + data.ToString(), ToastLength.Long).Show();
+                //Toast.MakeText(Android.App.Application.Context, "Result: " + data.ToString(), ToastLength.Long).Show();
 
-                bool success = JsonSerializer.Deserialize<bool>(data.data);
+                bool success = (data.data == "true") ? true : false;
 
                 return success;
             }
@@ -188,6 +243,8 @@ namespace Codeholic.Resources
         public async static Task<bool> UpdatePluginName(int _pluginID, string _name)
         {
 
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
 
             using (HttpClientHandler clientHandler = new HttpClientHandler())
             {
@@ -219,7 +276,9 @@ namespace Codeholic.Resources
                 try
                 {
                     WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
-                    success = JsonSerializer.Deserialize<bool>(data.data);
+                    //Toast.MakeText(Android.App.Application.Context, data.data, ToastLength.Long).Show();
+
+                    success = (data.data == "true") ? true : false;
                 }
                 catch (Exception ex)
                 {
@@ -238,6 +297,8 @@ namespace Codeholic.Resources
         public async static Task<bool> UpdatePluginDescription(int _pluginID, string _description)
         {
 
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
 
             using (HttpClientHandler clientHandler = new HttpClientHandler())
             {
@@ -269,7 +330,8 @@ namespace Codeholic.Resources
                 try
                 {
                     WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
-                    success = JsonSerializer.Deserialize<bool>(data.data);
+
+                    success = (data.data == "true") ? true : false;
                 }
                 catch (Exception ex)
                 {
@@ -287,6 +349,8 @@ namespace Codeholic.Resources
         public async static Task<bool> UpdatePluginAvailability(int _pluginID, bool _available)
         {
 
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
 
             using (HttpClientHandler clientHandler = new HttpClientHandler())
             {
@@ -318,7 +382,110 @@ namespace Codeholic.Resources
                 try
                 {
                     WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
-                    success = JsonSerializer.Deserialize<bool>(data.data);
+
+                    success = (data.data == "true") ? true : false;
+                }
+                catch (Exception ex)
+                {
+                    //Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long).Show();
+
+                }
+                // want to get the result as bool
+                //Toast.MakeText(Android.App.Application.Context, "trying to update pluginID " + _pluginID + " to name " + _name, ToastLength.Long).Show();
+
+
+                return success;
+            }
+        }
+
+        public async static Task<bool> UpdatePluginData(int _pluginID, string _pluginData)
+        {
+
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
+
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "updatePluginData",
+                    pluginID = _pluginID,
+                    pluginData = _pluginData
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                //Toast.MakeText(Android.App.Application.Context, "trying to update pluginID " + _pluginID + " to name " + _name, ToastLength.Long).Show();
+
+                bool success = false;
+
+                try
+                {
+                    WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                    success = (data.data == "true") ? true : false;
+                }
+                catch (Exception ex)
+                {
+                    //Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long).Show();
+
+                }
+                // want to get the result as bool
+                //Toast.MakeText(Android.App.Application.Context, "trying to update pluginID " + _pluginID + " to name " + _name, ToastLength.Long).Show();
+
+
+                return success;
+            }
+        }
+
+        public async static Task<bool> UpdateHelpDocData(int _pluginID, string _helpdocData)
+        {
+
+            if (!HavePrivilege(UserType.pluginDeveloper))
+                return false;
+
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "updatePluginHelpDocData",
+                    pluginID = _pluginID,
+                    helpdocData = _helpdocData
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                //Toast.MakeText(Android.App.Application.Context, "trying to update pluginID " + _pluginID + " to name " + _name, ToastLength.Long).Show();
+
+                bool success = false;
+
+                try
+                {
+                    WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                    success = (data.data == "true") ? true : false;
                 }
                 catch (Exception ex)
                 {
@@ -362,7 +529,6 @@ namespace Codeholic.Resources
                 WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
 
                 SQL.Plugin plugin = JsonSerializer.Deserialize<SQL.Plugin>(data.data);
-
                 return plugin;
             }
         }

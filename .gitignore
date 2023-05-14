@@ -17,3 +17,10 @@
 /.vs/SoftwareEngineeringFSU/obj/Debug/
 /.vs/SoftwareEngineeringFSU/obj/Release/
 /.vs/SoftwareEngineeringFSU/obj/.cache/
+*.vsidx
+/Codeholic/bin/Debug/com.companyname.codeholic.apk
+/Codeholic/bin/Debug/com.companyname.codeholic-Signed.apk
+/.vs/SoftwareEngineeringFSU/v17/workspaceFileList.bin
+/.vs/SoftwareEngineeringFSU/v17/.wsuo
+/.vs/slnx.sqlite
+/.vs/Codeholic/v17/.suo

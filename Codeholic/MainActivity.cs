@@ -15,6 +15,7 @@ using System.Net;
 using Codeholic.Resources;
 using Codeholic.SQL;
 using System.Text.Json;
+using static Android.Provider.ContactsContract.CommonDataKinds;
 
 namespace Codeholic
 {
@@ -42,9 +43,38 @@ namespace Codeholic
             // DO NOT ENABLE THIS IN RELEASE BUILDS
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (_, __, ___, ____) => true;
 #endif
-            TestConn();
+            //TestConn();
+            TestInsert();
             // for test:
             //getID();
+        }
+
+        private async void TestInsert()
+        {
+            string username = "a name7";
+            string password = "a password6";
+            string email = "an email6";
+            
+            string myQuery = "insert into user (userType, username, password, firstName, lastName, email) "
+             + "values (0, '" + username + "', '" + password + "', 'BLANK', 'BLANK', '" + email + "');";
+
+
+            var result = await DatabaseConnection.Query(myQuery);
+
+            
+            if (result != null)
+                if (result.data == "false")
+                {
+                    Toast.MakeText(this, "That username is taken.", ToastLength.Short).Show();
+                    return;
+                }
+                else
+                {
+                    Toast.MakeText(this, "Successfully registered user!", ToastLength.Short).Show();
+                }
+            
+
+            
         }
 
         private async void TestConn()
