@@ -35,7 +35,7 @@ namespace Codeholic.SQL
             helpdocData = "helpdoc data string";
             
         }
-        public Plugin(string _data, string _name = "default plugin name", string _description = "default plugin description")
+        public Plugin(string _data, string _helpDocData, string _name = "default plugin name", string _description = "default plugin description")
         {
             // constructor stuff
             pluginData = _data;

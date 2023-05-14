@@ -18,6 +18,9 @@ using System.Text;
 using System.IO;
 using Environment = System.Environment;
 using File = System.IO.File;
+using AndroidX.CardView.Widget;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace Codeholic.Resources
 {
@@ -59,7 +62,7 @@ namespace Codeholic.Resources
                 plugins = new List<Codeholic.SQL.Plugin>();
                 
                 for(int i = 0; i < 5; i++)
-                    plugins.Add(new Codeholic.SQL.Plugin(null));
+                    plugins.Add(new Codeholic.SQL.Plugin());
             }
 
             ListPlugins(plugins);
@@ -86,9 +89,27 @@ namespace Codeholic.Resources
 
             pluginsToList = await DatabaseConnection.GetPluginsByCreator(statusText);
             statusText.Text = "Found " + pluginsToList.Count().ToString() + " plugins belonging to user.";
+            bool firstLoop = true;
             if(pluginsToList != null)
                 foreach (Codeholic.SQL.Plugin plugin in pluginsToList)
                 {
+                    // i think that we might want to just add a button in the cardview
+
+                    CardView cardView = new CardView(Android.App.Application.Context);
+                    cardView.Elevation = 4;
+                    cardView.Radius = 5;
+                    cardView.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.WrapContent);
+
+                    Android.Widget.Button expandButton = new Android.Widget.Button(this);
+
+                    expandButton.Text = plugin.name;
+
+                    expandButton.SetBackgroundColor(Android.Graphics.Color.Gray);
+                    expandButton.SetTextColor(Android.Graphics.Color.White);
+                    //expandButton.SetTextAppearance(this, Android.Resource.Style.TextAppearanceDeviceDefaultWidgetActionBarTitle);
+
+                    LinearLayout cardLayout = new LinearLayout(Android.App.Application.Context);
+                    cardLayout.Orientation = Orientation.Vertical;
                     EditText pluginName = new EditText(this);
                     //pluginName.set
                     pluginName.Text = plugin.name;// "holy guacamole";
@@ -96,7 +117,131 @@ namespace Codeholic.Resources
                     EditText pluginDescription = new EditText(this);
                     pluginDescription.Text = plugin.description;
 
-                    CheckBox pluginIsActive = new CheckBox(this);
+                    Android.Widget.CheckBox pluginIsActive = new Android.Widget.CheckBox(this);
+
+                    // file select 1 & 2 
+                    Android.Widget.Button pluginDownload = new Android.Widget.Button(this);
+                    Android.Widget.Button pluginUpload = new Android.Widget.Button(this);
+
+                    pluginDownload.Text = "Download Plugin Backup";
+                    pluginUpload.Text = "Modify/Overwrite Plugin";
+
+
+                    Android.Widget.Button helpdocDownload = new Android.Widget.Button(this);
+                    Android.Widget.Button helpdocUpload = new Android.Widget.Button(this);
+
+                    helpdocDownload.Text = "Download Help Doc Backup";
+                    helpdocUpload.Text = "Modify/Overwrite Help Doc";
+
+                    Android.Widget.Button fileSelectButton = new Android.Widget.Button(this);
+                    fileSelectButton.Text = "Select Plugin File";
+
+                    Android.Widget.Button helpDocFileSelectButton = new Android.Widget.Button(this);
+                    helpDocFileSelectButton.Text = "Select Help Doc File";
+
+                    TextView selectedFileText = new TextView(this);
+                    selectedFileText.Text = "Selected Plugin File Will Appear Here";
+
+                    TextView selectedHelpDocText = new TextView(this);
+                    selectedHelpDocText.Text = "Selected Help Doc File Will Appear Here";
+
+                    FileResult selectedFile = null;
+                    FileResult selectedHelpDocFile = null;
+
+                    fileSelectButton.Click += async (object sender, EventArgs e) =>
+                    {
+                        var result = await Extensions.PickFile();
+                        if (result != null)
+                        {
+                            selectedFileText.Text = result.FileName;
+                            // find a way to have pluginUpload upload this file/overwrite on click! 
+                            selectedFile = result;
+                        }
+                        else
+                            selectedFile = null;
+
+                    };
+
+                    helpDocFileSelectButton.Click += async (object sender, EventArgs e) =>
+                    {
+                        var result = await Extensions.PickFile();
+                        if (result != null)
+                        {
+                            selectedHelpDocText.Text = result.FileName;
+                            // find a way to have pluginUpload upload this file/overwrite on click! 
+                            selectedHelpDocFile = result;
+                        }
+                        else
+                            selectedHelpDocFile = null;
+
+                    };
+
+                    pluginUpload.Click += async (object sender, EventArgs e) =>
+                    {
+                        if(selectedFile == null)
+                        {
+                            // send a message that it needs to not be null!
+                            Toast.MakeText(Android.App.Application.Context, "Please select a file first!", ToastLength.Long).Show();
+                            return;
+                        }
+                        // alert the user that they are about to overwrite file 
+                        //var result = await p.DisplayActionSheet("Overwrite plugin?", "No", null, "Yes");
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Overwrite Plugin?"); 
+                        alert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
+                            
+                            string updatedPluginData = File.ReadAllText(selectedFile.FullPath);
+
+                            var result = await DatabaseConnection.UpdatePluginData(plugin.pluginID, updatedPluginData);
+                            if (result)
+                            {
+                                Toast.MakeText(Android.App.Application.Context, "Successfully updated plugin data.", ToastLength.Long).Show();
+                            }
+                            else
+                            {
+                                Toast.MakeText(Android.App.Application.Context, "Failed to update plugin data.", ToastLength.Long).Show();
+                            }
+
+                        }); 
+                        alert.SetNegativeButton("No thanks", (senderAlert, args) => {
+                            //perform your own task for this conditional button click
+                        });
+                        RunOnUiThread (() => { alert.Show(); });
+                    };
+
+                    helpdocUpload.Click += async (object sender, EventArgs e) =>
+                    {
+                        if (selectedHelpDocFile == null)
+                        {
+                            // send a message that it needs to not be null!
+                            Toast.MakeText(Android.App.Application.Context, "Please select a file first!", ToastLength.Long).Show();
+                            return;
+                        }
+                        // alert the user that they are about to overwrite file 
+                        //var result = await p.DisplayActionSheet("Overwrite plugin?", "No", null, "Yes");
+                        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                        alert.SetTitle("Overwrite Help Doc Data?");
+                        alert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
+
+                            string updatedHelpDocData = File.ReadAllText(selectedHelpDocFile.FullPath);
+
+                            var result = await DatabaseConnection.UpdateHelpDocData(plugin.pluginID, updatedHelpDocData);
+                            if (result)
+                            {
+                                Toast.MakeText(Android.App.Application.Context, "Successfully updated help doc data.", ToastLength.Long).Show();
+                            }
+                            else
+                            {
+                                Toast.MakeText(Android.App.Application.Context, "Failed to update help doc data.", ToastLength.Long).Show();
+                            }
+
+                        });
+                        alert.SetNegativeButton("No thanks", (senderAlert, args) => {
+                            //perform your own task for this conditional button click
+                        });
+                        RunOnUiThread(() => { alert.Show(); });
+                    };
+
                     pluginIsActive.Activated = (plugin.available > 0) ? true : false;
                     UpdateCheckBoxText(pluginIsActive);
 
@@ -116,49 +261,6 @@ namespace Codeholic.Resources
                         UpdateCheckBoxText(pluginIsActive);
                         await DatabaseConnection.UpdatePluginAvailability(plugin.pluginID, pluginIsActive.Checked);
                     };
-
-                //DatabaseConnection.UpdatePluginName(1, pluginName.Text); };
-                    
-                        //pluginDescription.AfterTextChanged += UpdatePluginDescription;
-
-                    // add code for modifying/overwriting, add code for downloading
-
-
-                    //ExpandableListView expandableListView= new ExpandableListView(this);
-
-                    //ArrayAdapter adapter = new ArrayAdapter<string>(context)
-
-
-                    //expandableListView.AddView(pluginName);
-                    //expandableListView.AddView(pluginDescription); 
-                    //expandableListView.AddView(pluginIsActive);
-
-                    //pluginManagerLayout.AddView(expandableListView);
-
-                    //View divider = new View(this);
-                    //divider.LayoutParameters = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
-                    //divider.SetBackgroundColor(Android.Graphics.Color.DarkGray);
-                
-
-                    //pluginName.LayoutParameters = layoutParams;
-                    //pluginDescription.LayoutParameters = layoutParams;
-
-                    // for some reason, pluginManagerLayout keeps being null
-                    //if(pluginManagerLayout != null)
-                    pluginManagerLayout.AddView(pluginName);
-                    pluginManagerLayout.AddView(pluginDescription);
-                    pluginManagerLayout.AddView(pluginIsActive);
-
-
-                    Button pluginDownload = new Button(this);
-                    Button pluginUpload = new Button(this);
-
-                    //LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WrapContent, 0);
-                    //pluginDownload.LayoutParameters = buttonParams;
-                    //pluginUpload.LayoutParameters = buttonParams;
-
-                    pluginDownload.Text = "Download Backup";
-                    pluginUpload.Text = "Modify/Overwrite Plugin";
 
                     pluginDownload.Click += async (object sender, EventArgs e) =>
                     {
@@ -188,15 +290,63 @@ namespace Codeholic.Resources
                         }
                     };
 
-                    pluginManagerLayout.AddView(pluginDownload);
-                    pluginManagerLayout.AddView(pluginUpload);
+
+                    void SetVisibility(ViewStates viewState)
+                    {
+
+                        pluginName.Visibility = viewState;
+                        pluginDescription.Visibility = viewState;
+                        pluginIsActive.Visibility = viewState;
+                        pluginDownload.Visibility = viewState;
+                        pluginUpload.Visibility = viewState;
+                        helpdocDownload.Visibility = viewState;
+                        helpdocUpload.Visibility = viewState;
+                        helpDocFileSelectButton.Visibility = viewState;
+                        selectedHelpDocText.Visibility = viewState;
+                        fileSelectButton.Visibility = viewState;
+                        selectedFileText.Visibility = viewState;
+                    }
+
+                    expandButton.Click += (object sender, EventArgs e) =>
+                    {
+                        if(pluginName.Visibility == ViewStates.Visible)
+                            SetVisibility(ViewStates.Gone);
+                        else
+                            SetVisibility(ViewStates.Visible);
+                        
+                    };
+                    
+                    if(firstLoop)
+                        firstLoop= false;
+                    else
+                        SetVisibility(ViewStates.Gone);
+                    
+                    cardLayout.AddView(expandButton);
+                    cardLayout.AddView(pluginName);
+                    cardLayout.AddView(pluginDescription);
+                    cardLayout.AddView(pluginIsActive);
+                    cardLayout.AddView(pluginDownload);
+                    cardLayout.AddView(fileSelectButton);
+                    cardLayout.AddView(selectedFileText);
+                    cardLayout.AddView(pluginUpload);
+                    cardLayout.AddView(helpdocDownload);
+                    cardLayout.AddView(helpDocFileSelectButton);
+                    cardLayout.AddView(selectedHelpDocText);
+                    cardLayout.AddView(helpdocUpload);
+                    cardView.AddView(cardLayout);
+                    pluginManagerLayout.AddView(cardView);
+                    //pluginManagerLayout.AddView(pluginName);
+                    //pluginManagerLayout.AddView(pluginDescription);
+                    //pluginManagerLayout.AddView(pluginIsActive);
+                    //pluginManagerLayout.AddView(pluginDownload);
+                    //pluginManagerLayout.AddView(pluginUpload);
                 
                 }
         }
 
         void UpdatePluginAvailability(object sender, EventArgs e)
         {
-            CheckBox checkBox = sender as CheckBox;
+            Android.Widget.CheckBox checkBox = sender as Android.Widget.CheckBox;
             if (checkBox == null)
                 return;
 
@@ -218,7 +368,7 @@ namespace Codeholic.Resources
 
         }
 
-        void UpdateCheckBoxText(CheckBox checkBox)
+        void UpdateCheckBoxText(Android.Widget.CheckBox checkBox)
         {
             checkBox.Checked = checkBox.Activated;
             checkBox.Text = (checkBox.Checked) ? "Publicly Available" : "Not available";
