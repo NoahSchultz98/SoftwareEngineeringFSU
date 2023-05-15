@@ -107,6 +107,7 @@ namespace Codeholic.Resources
                 alert.SetTitle("Upload plugin?");
                 alert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
 
+                    //Toast.MakeText(Android.App.Application.Context, fileData + " and... " + helpDocData, ToastLength.Short).Show();
                     var result = await DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, helpDocData, pluginNameEditText.Text, pluginDescriptionEditText.Text));
 
                     if (result)
