@@ -17,25 +17,43 @@
         android:layout_height="wrap_content"
         android:id="@+id/pluginDescription" />
     <TextView
-        android:text="Name of selected file will appear here"
+        android:text="Name of selected plugin file will appear here"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/labelSelectedFile" />
+        android:id="@+id/labelSelectedPluginFile" />
     <Button
-        android:text="Select File"
+        android:text="Select Plugin File"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSelectFile" />
+        android:id="@+id/btnSelectPluginFile" />
+    <TextView
+        android:text="Name of selected help doc file will appear here"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/labelSelectedHelpDocFile" />
+    <Button
+        android:text="Select Help Doc File"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSelectHelpDocFile" />
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <Button
         android:text="Upload Plugin"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:id="@+id/btnUploadPlugin" />
-    <EditText
-        android:inputType="textMultiLine"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/textViewErrorLogging" />
+    </RelativeLayout>
 
 </LinearLayout>
