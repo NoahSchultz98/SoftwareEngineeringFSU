@@ -23,12 +23,12 @@ namespace Codeholic.Resources
         // set this to a user to 'log in', unset to 'log out'
         public static User currentUser;
 
-        public static int currentUserID { get { if (currentUser != null) return currentUser.userID; else return 1; } } // not -1 = logged in -- login can set this variable to enable functions. unset to 'log out'. it's like a key in the ignition
+        public static int currentUserID { get { if (currentUser != null) return currentUser.userID; else return -1; } } // not -1 = logged in -- login can set this variable to enable functions. unset to 'log out'. it's like a key in the ignition
         // returns pluginDeveloper by default until database integration
-        public static UserType currentUserType { get { if (currentUser != null) return currentUser.userType; else return UserType.pluginDeveloper; } }
+        public static UserType currentUserType { get { if (currentUser != null) return currentUser.userType; else return UserType.guest; } }
 
         // address of the local server
-        private static string URI = "http://192.168.1.4/Codeaholic/access.php";
+        private static string URI = "http://192.168.47.237/Codeaholic/access.php";
         
 
         public static bool HavePrivilege(UserType privilegeLevel)
@@ -111,6 +111,36 @@ namespace Codeholic.Resources
                     Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long).Show();
                     return null;
                 }
+            }
+        }
+
+        public async static Task<WebResponse> NoahQuery(string _query)
+        {
+            using (HttpClientHandler clientHandler = new HttpClientHandler())
+            {
+                clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+                var httpClient = new HttpClient(clientHandler);
+
+                using StringContent jsonContent = new StringContent(JsonSerializer.Serialize(new
+                {
+                    function = "query",
+                    query = _query
+                }),
+                Encoding.UTF8,
+                "application/json");
+
+                using HttpResponseMessage response = await httpClient.PostAsync(URI, jsonContent);
+
+                response.EnsureSuccessStatusCode();
+
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+                // could try/catch here
+                return data;
             }
         }
 
