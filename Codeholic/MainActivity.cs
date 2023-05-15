@@ -41,8 +41,8 @@ namespace Codeholic
             BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             navigation.SetOnNavigationItemSelectedListener(this);
 
-            Button pickFile = FindViewById<Button>(Resource.Id.btnPickFile);
-            pickFile.Click += PickFile_Click;
+            //Button pickFile = FindViewById<Button>(Resource.Id.btnPickFile);
+            //pickFile.Click += PickFile_Click;
 #if DEBUG
             // During development, we can trust all certificates, including ASP.NET developer certificates
             // DO NOT ENABLE THIS IN RELEASE BUILDS

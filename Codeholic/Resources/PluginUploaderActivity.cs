@@ -1,4 +1,4 @@
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -71,7 +71,7 @@ namespace Codeholic.Resources
                 // open, read file
                 fileData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastPluginFileResult.FileName));
             }
-            if (lastHelpDocFileResult == null)
+            if(lastHelpDocFileResult == null)
             {
                 AlertDialog.Builder helpDocAlert = new AlertDialog.Builder(this);
                 helpDocAlert.SetTitle("Upload plugin without help documentation?");

@@ -20,11 +20,54 @@ using RestSharp;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Net.Http.Json;
+using System.IO;
 
 namespace Codeholic.Resources
 {
     internal class Extensions
     {
+
+
+        public static async Task<FileResult> PickFile()
+        {
+            try
+            {
+                var result = await FilePicker.PickAsync();
+
+                if (result != null)
+                {
+                    //FindViewById<TextView>(Resource.Id.labelSelectedFile).Text = $"File Name: {result.FileName}";
+                    var stream = await result.OpenReadAsync();
+                    // write this to a string and send it to the db
+                    //Extensions.uploadPlugin(new Plugin("")); // data should go here, in future
+                }
+
+                return result;
+            }
+            catch (System.Exception ex)
+            {
+                // The user canceled or something went wrong
+                _ = ex;
+            }
+
+            return null;
+        }
+
+        public static void UploadPlugin(FileResult fileResult, string fileName, string fileDescription)
+        {
+
+            string fileData = "placeholder data";
+
+            if (fileResult != null)
+            {
+                // open, read file
+                fileData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, fileResult.FileName));
+            }
+
+            Toast.MakeText(Android.App.Application.Context, Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, fileResult.FileName), ToastLength.Long).Show();
+
+            var result = DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, fileName, fileDescription));
+        }
 
         
         private static RestClient _client = new RestClient("https://www.pokodraws.com/");
@@ -34,17 +77,6 @@ namespace Codeholic.Resources
         private static string dbName = "";
         public const bool DEBUG_MODE = false;
 
-        public static async void uploadPlugin(Plugin plugin)
-        {
-            using(var dbContext = new DatabaseContext())
-            {
-                var query = dbContext.Add(plugin);
-                await dbContext.SaveChangesAsync();
-
-                Toast.MakeText(Android.App.Application.Context, "Added plugin to local database", ToastLength.Long).Show();
-            }
-
-        }
 
         public static void TestRest()
         {
@@ -162,9 +194,7 @@ namespace Codeholic.Resources
             }
             catch (Exception e)
             {
-
-                return e.Message;
-                //throw;
+                throw;
                 //Toast.MakeText(Android.App.Application.Context, "An error was encountered in attempting to open the connection: " + e.Message, ToastLength.Long).Show();
 
                 //return e.StackTrace;
@@ -200,23 +230,6 @@ namespace Codeholic.Resources
         {
             // stump code for later; when we can lookup users in the database we'll check if their userType has sufficient privileges
             return true;
-        }
-
-        public static async Task<FileResult> PickFile()
-        {
-            var customFileType =
-                new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
-                {
-               { DevicePlatform.iOS, new[] { "public" } }, // or general UTType values  
-               { DevicePlatform.Android, new[] { "*/*" } },
-                });
-            var options = new PickOptions
-            {
-                PickerTitle = "Please select a comic file",
-                FileTypes = customFileType,
-            };
-            var result = await FilePicker.PickAsync(options);
-            return result;
         }
 
     }

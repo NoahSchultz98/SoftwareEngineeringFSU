@@ -49,12 +49,13 @@
         android:hint="@string/pass"
         android:inputType="textPassword" />
 
+    <!--
     <Button
         android:text="Pick File"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnPickFile" />
-
+    -->
     <Button
         android:id="@+id/ButtonLogin"
         android:layout_width="150dp"

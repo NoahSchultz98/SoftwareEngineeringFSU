@@ -78,7 +78,7 @@ namespace Codeholic
                         Toast.MakeText(this, "You must be registered as a plugin developer to access the plugin management interface.", ToastLength.Long).Show();
                         return false;
                     }
-                    textMessage.Text = "Plugin Manager"; // just a hack for now
+                    //textMessage.Text = "Plugin Manager"; // just a hack for now
                     // code to begin new activity
                     Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
                     StartActivity(nextActivity);
@@ -107,7 +107,13 @@ namespace Codeholic
 
         public void OnLogoutPress(object sender, EventArgs e)
         {
+
+            DatabaseConnection.currentUser = null;
+
             Toast.MakeText(this, "Logout Clicked", ToastLength.Short).Show();
+
+            Intent SignInActivity = new Intent(this, typeof(MainActivity));
+            StartActivity(SignInActivity);
 
         }
 
