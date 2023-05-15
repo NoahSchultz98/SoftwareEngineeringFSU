@@ -55,7 +55,7 @@ namespace Codeholic
 
 
             string myQuery = "insert into user (userType, username, password, firstName, lastName, email) ";
-            myQuery += "values (0, '"+ username +"', '"+ password+"', 'BLANK', 'BLANK', '"+email+"');";
+            myQuery += "values (1, '"+ username +"', '"+ password+"', 'BLANK', 'BLANK', '"+email+"');";
 
             // insert into the database 
             var result = await DatabaseConnection.Query(myQuery);

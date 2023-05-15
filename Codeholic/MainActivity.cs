@@ -48,7 +48,7 @@ namespace Codeholic
             // DO NOT ENABLE THIS IN RELEASE BUILDS
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (_, __, ___, ____) => true;
 #endif
-            TestConn();
+            //TestConn();
             // for test:
             //getID();
 
@@ -134,20 +134,41 @@ namespace Codeholic
             //Boolean condition = username == "username" && password == "password";
             //string connection = "temporary value";
 
-            string myQuery = "Select * from user where username = '" + username + "'";
-            myQuery += " and password = '" + password + "'";
+            string myQuery = "select * from user where username = '" + username + "'";
+            myQuery += " and password = '" + password + "';";
+
+            string ex = "unassigned";
 
             try
             { // try to login
-                var result = await DatabaseConnection.Query(myQuery);
-                User user = JsonSerializer.Deserialize<User>(result.data);
 
-                Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
+                var result = await DatabaseConnection.Query(myQuery);
+                Toast.MakeText(this, result.data, ToastLength.Short).Show();
+                
+                if (result != null && result.data == "false")
+                { // if result is false the username is taken
+                    Toast.MakeText(this, "query failed", ToastLength.Short).Show();
+                    return;
+                }
+                else if (result == null)
+                { // if the result is null the query did something weird
+                    Toast.MakeText(this, "NULL RESULT", ToastLength.Short).Show();
+                    return;
+                }
+                
+                ex = result.data;
+
+                User user = JsonSerializer.Deserialize<User>(result.data);
+                
+                DatabaseConnection.currentUser = user;
+
+                //Toast.MakeText(this, "You logged in", ToastLength.Short).Show();
 
                 Intent Noahintent = new Intent(this, typeof(NoahActivity));
                 StartActivity(Noahintent);
             }
-            catch { // catch when query fails OR invalid login
+            catch { // catch when invalid
+                    
                 Toast.MakeText(this, "Incorrect Username or Password", ToastLength.Short).Show();
             }
             
@@ -157,6 +178,17 @@ namespace Codeholic
         {
             Toast.MakeText(this, "You chose not to login", ToastLength.Short).Show();
 
+            /*
+            User user = new User(); //= JsonSerializer.Deserialize<User>(result.data);
+
+            user.userType = 0;
+            user.firstName = "Guest";
+            user.lastName = "Guest";
+            user.userID = 99;
+            user.email = "NONE";
+
+            DatabaseConnection.currentUser = user;
+            */
             Intent Noahintent = new Intent(this, typeof(NoahActivity));
             StartActivity(Noahintent);
         }
