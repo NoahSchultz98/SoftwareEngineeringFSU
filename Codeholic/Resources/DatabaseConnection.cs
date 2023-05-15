@@ -20,6 +20,7 @@ namespace Codeholic.Resources
 {
     internal class DatabaseConnection
     {
+
         // set this to a user to 'log in', unset to 'log out'
         public static User currentUser;
 
@@ -34,7 +35,9 @@ namespace Codeholic.Resources
         public static bool HavePrivilege(UserType privilegeLevel)
         {
             if (currentUserType >= privilegeLevel)
+            {
                 return true;
+            }
             else
                 return false;
         }
@@ -241,32 +244,39 @@ namespace Codeholic.Resources
                 {
                     PropertyNameCaseInsensitive = true
                 };
-
-                WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
-
-                List<SQL.Plugin> pluginsByCreator = new List<SQL.Plugin>();
-                if (debugWindow != null)
-                {
-                    debugWindow.Text = data.data;
-                }
                 try
                 {
-                    pluginsByCreator = JsonSerializer.Deserialize<List<SQL.Plugin>>(data.data).ToList();
+                    WebResponse data = await response.Content.ReadFromJsonAsync<WebResponse>(options);
+
+                    List<SQL.Plugin> pluginsByCreator = new List<SQL.Plugin>();
                     if (debugWindow != null)
                     {
-                        debugWindow.Text = pluginsByCreator.Count().ToString();
+                        debugWindow.Text = data.data;
                     }
-                    //Toast.MakeText(Android.App.Application.Context)
+                    try
+                    {
+                        pluginsByCreator = JsonSerializer.Deserialize<List<SQL.Plugin>>(data.data).ToList();
+                        if (debugWindow != null)
+                        {
+                            debugWindow.Text = pluginsByCreator.Count().ToString();
+                        }
+                        //Toast.MakeText(Android.App.Application.Context)
+                    }
+                    catch (Exception ex)
+                    {
+                        Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long);
+                        if (debugWindow != null)
+                        {
+                            debugWindow.Text = ex.StackTrace;
+                        }
+                        return null;
+                    }
+                    return pluginsByCreator;
                 }
-                catch (Exception ex)
+                catch
                 {
-                    Toast.MakeText(Android.App.Application.Context, ex.Message, ToastLength.Long);
-                    if (debugWindow != null)
-                    {
-                        debugWindow.Text = ex.StackTrace;
-                    }
+                    return null;
                 }
-                return pluginsByCreator;
             }
         }
 

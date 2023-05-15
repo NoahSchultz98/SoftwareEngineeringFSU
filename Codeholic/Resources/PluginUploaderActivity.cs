@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -66,6 +66,56 @@ namespace Codeholic.Resources
 
             var result = DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, pluginNameEditText.Text, pluginDescriptionEditText.Text));
             //Toast.MakeText(Android.App.Application.Context, "Result: " + result.Result, ToastLength.Long).Show();
+
+                    // continue execution...
+                    UploadThePlugin();
+                });
+                helpDocAlert.SetNegativeButton("No thanks", (senderAlert, args) => {
+
+                    // stop execution...
+
+                    return;
+
+                });
+                RunOnUiThread(() => { helpDocAlert.Show(); });
+
+            }
+            else
+            {
+                helpDocData = System.IO.File.ReadAllText(Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, lastHelpDocFileResult.FileName));
+                UploadThePlugin();
+            }
+
+            void UploadThePlugin()
+            {
+
+                // alert the user that they are about to overwrite file 
+                //var result = await p.DisplayActionSheet("Overwrite plugin?", "No", null, "Yes");
+                AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                alert.SetTitle("Upload plugin?");
+                alert.SetPositiveButton("Yeah, let's do it", async (senderAlert, args) => {
+
+                    //Toast.MakeText(Android.App.Application.Context, fileData + " and... " + helpDocData, ToastLength.Short).Show();
+                    var result = await DatabaseConnection.UploadPlugin(new SQL.Plugin(fileData, helpDocData, pluginNameEditText.Text, pluginDescriptionEditText.Text));
+
+                    if (result)
+                    {
+                        Toast.MakeText(Android.App.Application.Context, "Successfully updated plugin data.", ToastLength.Long).Show();
+                    }
+                    else
+                    {
+                        Toast.MakeText(Android.App.Application.Context, "Failed to update plugin data.", ToastLength.Long).Show();
+                    }
+
+                });
+                alert.SetNegativeButton("No thanks", (senderAlert, args) => {
+                    //perform your own task for this conditional button click
+
+                    return;
+
+                });
+                RunOnUiThread(() => { alert.Show(); });
+            }
 
         }
 

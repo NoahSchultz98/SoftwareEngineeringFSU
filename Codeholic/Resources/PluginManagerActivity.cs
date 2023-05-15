@@ -1,4 +1,4 @@
-﻿using Android.App;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -52,16 +52,6 @@ namespace Codeholic.Resources
             statusText = FindViewById<TextView>(Resource.Id.status);
             statusText.MovementMethod = new ScrollingMovementMethod();
 
-            if (Extensions.ConnectedToDatabase())
-                plugins = getDeveloperPlugins();
-            else
-            {
-                plugins = new List<Codeholic.SQL.Plugin>();
-                
-                for(int i = 0; i < 5; i++)
-                    plugins.Add(new Codeholic.SQL.Plugin(null));
-            }
-
             ListPlugins(plugins);
 
             //Toast.MakeText(Android.App.Application.Context, Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, ToastLength.Long).Show();
@@ -85,6 +75,9 @@ namespace Codeholic.Resources
             // here, we just replaced plugins to list with the list of plugins from getPluginsByCreator
 
             pluginsToList = await DatabaseConnection.GetPluginsByCreator(statusText);
+            if (pluginsToList == null || pluginsToList.Count < 1)
+                return;
+
             statusText.Text = "Found " + pluginsToList.Count().ToString() + " plugins belonging to user.";
             if(pluginsToList != null)
                 foreach (Codeholic.SQL.Plugin plugin in pluginsToList)

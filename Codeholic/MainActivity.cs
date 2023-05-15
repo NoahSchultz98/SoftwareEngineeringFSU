@@ -49,6 +49,7 @@ namespace Codeholic
             System.Net.ServicePointManager.ServerCertificateValidationCallback = (_, __, ___, ____) => true;
 #endif
             //TestConn();
+            //TestInsert();
             // for test:
             //getID();
 
@@ -108,7 +109,12 @@ namespace Codeholic
                     //textMessage.SetText(Resource.String.title_dashboard);
                     return true;
                 case Resource.Id.navigation_notifications:
-                    //textMessage.Text = "Plugin Manager"; // just a hack for now
+                    if(DatabaseConnection.currentUserType != UserType.pluginDeveloper)
+                    {
+                        Toast.MakeText(this, "You must be registered as a plugin developer to access the plugin management interface.", ToastLength.Long).Show();
+                        return false;
+                    }
+                    textMessage.Text = "Plugin Manager"; // just a hack for now
                     // code to begin new activity
                     Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
                     StartActivity(nextActivity);
