@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 //using AndroidX.AppCompat.App;
 using AndroidX.AppCompat.App;
+using Codeholic.Resources;
+using Codeholic.SQL;
 //using Google.Android.Material.BottomNavigation;
 using Google.Android.Material.BottomNavigation;
 using Java.Lang;
@@ -71,6 +73,11 @@ namespace Codeholic
                     //textMessage.SetText(Resource.String.title_dashboard);
                     return true;
                 case Resource.Id.navigation_notifications:
+                    if (DatabaseConnection.currentUserType != UserType.pluginDeveloper)
+                    {
+                        Toast.MakeText(this, "You must be registered as a plugin developer to access the plugin management interface.", ToastLength.Long).Show();
+                        return false;
+                    }
                     textMessage.Text = "Plugin Manager"; // just a hack for now
                     // code to begin new activity
                     Intent nextActivity = new Intent(this, typeof(Resources.PluginManagementSystemActivity));
